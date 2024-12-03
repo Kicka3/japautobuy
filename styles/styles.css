@@ -1,4 +1,93 @@
 @charset "UTF-8";
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+:root {
+  --font-sans-serif: "roboto", sans-serif;
+  --font-condensed: "bebas-neue-pro", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --font-condensed-expanded: bebas-neue-pro-semiexpanded, sans-serif;
+  --font-title-eng: "post_no_bills_colombosemibold", "bebas-neue-pro", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --color-title: #232323;
+  --color-text: #666;
+  --color-label: #748494;
+  --color-link: #232323;
+  --color-gray: rgba(0, 0, 0, .1);
+  --color-gray-border: rgba(0, 0, 0, .2);
+  --color-gray-light: #f4f4f4;
+  --color-white: #FFFFFF;
+  --color-gray-background: #f7f7f7;
+  --color-red: #c51219;
+  --color-red-dark: #1d0b0b;
+  --color-disabled-background: #f0f0f0;
+  --color-disabled-border: 1px solid #ddd;
+  --color-disabled-text: #ddd;
+  --color-navigation: var(--color-red-dark);
+  --gradient-red: linear-gradient(270deg, #ca131a, #920b10);
+  --gradient-green: linear-gradient(270deg, #25d366, #25d366);
+  --gradient-blue: #25a2e0;
+  --padding-content: 32px;
+  --padding-content-xl: 40px;
+  --padding-section-right-left: 32px;
+  --line-gray: 1px solid var(--color-gray);
+  --container-width-max: 1200px;
+  --container-padding: 32px;
+  --transition-duration: 0.2s;
+}
+
+/** Директивы font дял подключения локальных файлов со шрифтами */
+body {
+  font-family: var(--font-sans-serif);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-title);
+  background-color: var(--color-white);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /**
   Нормализация блочной модели
  */

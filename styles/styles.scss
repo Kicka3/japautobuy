@@ -1,7 +1,7 @@
-@import 'fonts',
-'globals',
-'media',
-'mixins',
-'normalize',
-'utils',
-'variables';
+@use 'utils';
+@use 'variables';
+@use 'fonts';
+@use 'globals';
+@use 'media';
+@use 'mixins';
+@use 'normalize';
