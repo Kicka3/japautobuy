@@ -1,0 +1,55 @@
+.header {
+  padding-top: 40px;
+
+  &__inner {
+    display: flex;
+    //justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      column-gap: 40px;
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: 60px;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      column-gap: 40px;
+
+      &-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        height: 44px;
+        width: 44px;
+      }
+    }
+  }
+
+  &__services {
+    &-description {
+      color: #a3a3a3;
+      font-size: .75rem;
+      font-weight: 300;
+      text-transform: none;
+      transition: all .15s ease-in-out;
+      white-space: nowrap;
+    }
+  }
+}

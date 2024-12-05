@@ -279,5 +279,49 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+.header {
+  padding-top: 40px;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+.header__menu-list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 40px;
+}
+.header__menu-link {
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+}
+.header__menu-right {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  column-gap: 40px;
+}
+.header__menu-right-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 44px;
+  width: 44px;
+}
+.header__services-description {
+  color: #a3a3a3;
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: none;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
 
 /*# sourceMappingURL=styles.css.map */

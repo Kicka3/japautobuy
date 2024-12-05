@@ -10,13 +10,132 @@
 </head>
 <body>
 
-<header class="header">
-    <div class="header__inner container">
-        <a href="/" class="header__logo logo">
-            <img src="#" alt="img logo" class="logo__image">
-        </a>
-    </div>
-</header>
+<main>
+    <section class="main">
+        <header class="header">
+            <div class="header__inner container">
+                <div>
+                    <a href="/" class="header__logo logo">
+                        <img src="images/svg/logo.svg"
+                             class="logo__image"
+                             alt="img logo"
+                             width="100px"
+                             height="50px"
+                             loading="lazy"
+                        >
+                    </a>
+                </div>
+                <nav class="header__menu hidden-mobile">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link">
+                                АВТО ИЗ ЯПОНИИ
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link">
+                                АВТО ИЗ КИТАЯ
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link">
+                                АВТО ИЗ КОРЕИ
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link">
+                                <div class="header__services">
+                                    <div class="header__services-title">ОНЛАЙН-СЕРВИСЫ</div>
+                                    <div class="header__services-description">Калькулятор</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
+                <div class="header__menu-right">
+                    <div class="header__menu-right-icons">
+                        <a href="/">
+                            <img src="images/svg/heart.svg"
+                                 class="icon__image"
+                                 alt="img logo"
+                                 width="100px"
+                                 height="50px"
+                                 loading="lazy"
+                            >
+                        </a>
+                        <a href="/">
+                            <img src="images/svg/scales.svg"
+                                 class="icon__image"
+                                 alt="img logo"
+                                 width="100px"
+                                 height="50px"
+                                 loading="lazy"
+                            >
+                        </a>
+                    </div>
+                    <div class="header__menu-item">
+                        <a href="/" class="header__menu-phone">
+                            8(800)444-50-28
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+</main>
+
+<!--Кнопка для модалки с телефона-->
+<button class="button__burger-menu burger-button visible-mobile" type="button" onClick="mobileOverlay.showModal()">
+    <span class="visually-hidden">Open navigation menu</span>
+</button>
+
+
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+    <form class="mobile-overlay__close-button-wrapper" method="dialog">
+        <button class="mobile-overlay__close-button cross-button" type="submit">
+            <span class="visually-hidden">Close navigation menu</span>
+        </button>
+    </form>
+    <div class="mobile-overlay__body">
+        <div class="mobile-overlay__head">
+            <div>LOGO</div>
+            <div>CROSS BTN</div>
+            <span>полоса</span>
+        </div>
+        <ul class="mobile-overlay__list">
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">АУКЦИОНЫ В ЯПОНИИ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">АУКЦИОНЫ ОНЛАЙН</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">АУКЦИОНЫ ДЛЯ КЛИЕНТОВ</a>
+            </li>
+        </ul>
+        <span>пунктир</span>
+        <ul class="mobile-overlay__list">
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">СТАТИСТИКА ПРОДАЖ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">ОНЛАЙН-СЕРВИСЫ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">ИНФОРМАЦИЯ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">ОТЗЫВЫ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">ВОПРОС-ОТВЕТ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a href="/" class="mobile-overlay__link">КОНТАКТЫ</a>
+            </li>
+        </ul>
+    </div>
+</dialog>
 </body>
 </html>
