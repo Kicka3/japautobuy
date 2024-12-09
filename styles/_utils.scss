@@ -1,9 +1,11 @@
 @use 'media';
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  //max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  display: flex;
+  max-width: 1200px;
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  //padding-inline: var(--container-padding-x);
 }
 
 .visually-hidden {
