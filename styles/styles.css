@@ -1,8 +1,8 @@
 @charset "UTF-8";
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  display: flex;
+  max-width: 1200px;
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
 }
 
 .visually-hidden {
@@ -31,10 +31,7 @@
 }
 
 :root {
-  --font-sans-serif: "roboto", sans-serif;
-  --font-condensed: "bebas-neue-pro", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-  --font-condensed-expanded: bebas-neue-pro-semiexpanded, sans-serif;
-  --font-title-eng: "post_no_bills_colombosemibold", "bebas-neue-pro", sans-serif;
+  --font-sans-serif: sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -67,8 +64,28 @@
 }
 
 /** Директивы font дял подключения локальных файлов со шрифтами */
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("../fonts/BebasNeue-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BebasNeuePro-ExpandedBold";
+  src: url("../fonts/BebasNeuePro-ExpandedBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BebasNeuePro-SemiExpBold";
+  src: url("../fonts/BebasNeuePro-SemiExpBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
-  font-family: var(--font-sans-serif);
   font-weight: 400;
   line-height: 1.28;
   color: var(--color-title);
@@ -279,13 +296,30 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
-.header {
-  padding-top: 40px;
+.main {
+  background: url("../../images/header-main.jpg") no-repeat center center;
+  background-size: cover;
+  padding-bottom: 48px;
+  height: 100vh;
+}
+
+.header__logo {
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  display: flex;
 }
 .header__inner {
   display: flex;
   align-items: center;
   column-gap: 16px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  min-height: 122px;
+}
+.header__menu {
+  padding: 0 50px;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
 }
 .header__menu-list {
   display: flex;
@@ -297,6 +331,29 @@ svg * {
   display: inline-flex;
   align-items: center;
   height: 60px;
+  position: relative;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+}
+@media (hover: hover) {
+  .header__menu-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .header__menu-link:active::after {
+    width: 100%;
+  }
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(270deg, #ca131a, #920b10);
 }
 .header__menu-right {
   display: flex;
@@ -305,6 +362,7 @@ svg * {
   justify-content: center;
   flex-wrap: nowrap;
   column-gap: 40px;
+  color: var(--color-white);
 }
 .header__menu-right-icons {
   display: flex;
@@ -312,16 +370,31 @@ svg * {
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 44px;
-  width: 44px;
+}
+.header__menu-right-icons .icon__image {
+  color: #fff;
+  width: 48px;
+  height: 48px;
+}
+.header__menu-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+}
+.header__services-phone {
+  color: #fff;
+  font-size: 1.625rem;
 }
 .header__services-description {
   color: #a3a3a3;
-  font-size: 0.75rem;
-  font-weight: 300;
   text-transform: none;
   transition: all 0.15s ease-in-out;
   white-space: nowrap;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  font-style: normal;
 }
 
 /*# sourceMappingURL=styles.css.map */

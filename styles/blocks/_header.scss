@@ -1,14 +1,27 @@
+@use '../media' as media;
+
 .header {
-  padding-top: 40px;
+
+  &__logo {
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    display: flex;
+  }
 
   &__inner {
     display: flex;
-    //justify-content: space-between;
     align-items: center;
     column-gap: 16px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+    min-height: 122px;
   }
 
   &__menu {
+    padding: 0 50px;
+    border-left: 1px solid hsla(0, 0%, 100%, .1);
+    border-right: 1px solid hsla(0, 0%, 100%, .1);
+
     &-list {
       display: flex;
       flex-wrap: nowrap;
@@ -20,6 +33,29 @@
       display: inline-flex;
       align-items: center;
       height: 60px;
+      position: relative;
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 700;
+      font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+
+      @include media.hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(270deg, #ca131a, #920b10);
+        //left: 50%;
+        //translate: -50%;
+        //transition-duration: inherit;
+      }
     }
 
     &-right {
@@ -29,6 +65,7 @@
       justify-content: center;
       flex-wrap: nowrap;
       column-gap: 40px;
+      color: var(--color-white);
 
       &-icons {
         display: flex;
@@ -36,20 +73,38 @@
         justify-content: center;
         flex-wrap: nowrap;
         flex-direction: row;
-        height: 44px;
-        width: 44px;
+
+        .icon__image {
+          color: #fff;
+          width: 48px;
+          height: 48px;
+        }
       }
+    }
+
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-family: "BebasNeuePro-SemiExpBold", sans-serif;
     }
   }
 
   &__services {
+    &-phone {
+      color: #fff;
+      font-size: 1.625rem;
+    }
+
     &-description {
       color: #a3a3a3;
-      font-size: .75rem;
-      font-weight: 300;
       text-transform: none;
       transition: all .15s ease-in-out;
       white-space: nowrap;
+      font-family: sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      font-style: normal;
     }
   }
 }
