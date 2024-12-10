@@ -6,5 +6,6 @@
 @use 'mixins';
 @use 'normalize';
 
-@use 'blocks/main';
-@use 'blocks/header';
+@use 'blocks/_main-header/main-header';
+@use 'blocks/_main-header/header';
+@use 'blocks/_main-header/header-content';

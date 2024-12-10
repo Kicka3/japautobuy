@@ -1,8 +1,10 @@
-@use '../media' as media;
+@use '../../media' as media;
 
 .header {
+  margin-bottom: 96px;
 
   &__logo {
+    margin-top: 8px;
     width: 64px;
     height: 64px;
     align-items: center;
@@ -18,7 +20,10 @@
   }
 
   &__menu {
-    padding: 0 50px;
+    margin-top: 6px;
+    white-space: nowrap;
+    letter-spacing: -1px;
+    padding: 0 48px;
     border-left: 1px solid hsla(0, 0%, 100%, .1);
     border-right: 1px solid hsla(0, 0%, 100%, .1);
 
@@ -26,7 +31,7 @@
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
-      column-gap: 40px;
+      column-gap: 50px;
     }
 
     &-link {
@@ -35,8 +40,8 @@
       height: 60px;
       position: relative;
       color: var(--color-white);
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
       font-family: "BebasNeuePro-SemiExpBold", sans-serif;
 
       @include media.hover {
@@ -52,9 +57,6 @@
         width: 0;
         height: 2px;
         background: linear-gradient(270deg, #ca131a, #920b10);
-        //left: 50%;
-        //translate: -50%;
-        //transition-duration: inherit;
       }
     }
 
@@ -64,8 +66,11 @@
       align-content: center;
       justify-content: center;
       flex-wrap: nowrap;
-      column-gap: 40px;
+      column-gap: 33px;
       color: var(--color-white);
+      margin-top: 10px;
+      font-weight: var(--font-weight-bold);
+      font-family: "BebasNeuePro-SemiExpBold", sans-serif;
 
       &-icons {
         display: flex;
@@ -87,10 +92,15 @@
       flex-direction: column;
       align-items: flex-end;
       font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+      white-space: nowrap;
+      letter-spacing: -1px;
     }
   }
 
   &__services {
+    display: flex;
+    flex-direction: column;
+
     &-phone {
       color: #fff;
       font-size: 1.625rem;
@@ -103,8 +113,8 @@
       white-space: nowrap;
       font-family: sans-serif;
       font-weight: 300;
-      font-size: 12px;
       font-style: normal;
+      font-size: 0.83rem;
     }
   }
 }
