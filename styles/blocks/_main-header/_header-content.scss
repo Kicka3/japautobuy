@@ -1,33 +1,35 @@
 .header-content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  overflow: hidden;
+  box-sizing: border-box;
 
   &__title-wrapper {
     grid-column: 1 / 7;
-    margin-top: 38px;
-    margin-bottom: 32px;
+    margin: 32px 0;
+    overflow: hidden;
   }
 
   &__title {
     display: flex;
     flex-direction: column;
-    font-size: 44px;
-    line-height: 1.1em;
+    font-size: 50px;
+    line-height: 1em;
     width: 400px;
     text-transform: uppercase;
     color: var(--color-white);
     font-weight: var(--font-weight-bold);
-    font-family: "BebasNeuePro-SemiExpBold", sans-serif;
-    margin-bottom: 30px;
+    font-family: "new-BebasNeue-Bold", sans-serif;
+    margin-bottom: 24px;
 
     &-sub {
       color: hsla(0, 0%, 100%, 0.7);
-      letter-spacing: 1px;
+      letter-spacing: 1.19px;
       font-style: normal;
-      font-family: var(--font-condensed), sans-serif;
       font-weight: var(--font-weight-light);
-      font-size: x-large;
-      line-height: 2;
+      font-family: "new-BebasNeue-Book", sans-serif;
+      font-size: 38px;
+      line-height: 53px;
     }
 
     &-team {
@@ -45,7 +47,9 @@
     justify-self: end;
     margin-bottom: 0;
     align-self: center;
-    margin-top: 34px;
+    overflow: hidden;
+    padding: 0 3px 0 4px;
+    margin-top: -88px;
   }
 
   &__button {
@@ -55,42 +59,52 @@
       background: hsla(0, 0%, 100%, .1);
       border: 1px solid hsla(276, 5%, 80%, .1);
       height: 60px;
-      padding-bottom: 10px;
-      padding-top: 12px;
       width: 288px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
       color: var(--color-white);
-      font-family: var(--font-condensed), sans-serif;
-      font-weight: var(--font-weight-bold);
+      padding: 14px 8px 10px 13px;
       font-size: 16px;
       text-transform: uppercase;
       transition: background 0.3s ease;
       border-radius: 8px;
-
-      &:hover {
-        background: hsla(0, 0%, 100%, .2);
-      }
     }
 
     &-content {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      gap: 6px;
+      font-size: 1rem;
+
+      &-text {
+        text-transform: uppercase;
+        font-weight: var(--font-weight-bold);
+        font-family: "new-BebasNeue-Bold", sans-serif;
+        line-height: 1em;
+        font-size: 1.19rem;
+      }
+
+      &-sub {
+        font-family: sans-serif;
+        font-size: .62rem;
+        font-weight: 500;
+        color: var(--color-title);
+      }
     }
 
     &-icon {
-      width: 24px;
-      height: 24px;
+      width: 12px;
+      height: 12px;
       fill: var(--color-white);
     }
   }
 
   &__submit {
     grid-column: 1 / 7;
-    margin-top: 24px;
+    margin-bottom: 88px;
 
     &-button {
       color: var(--color-white);
@@ -98,9 +112,9 @@
       padding: 12px 24px;
       font-size: 16px;
       font-weight: var(--font-weight-bold);
+      transition: background 0.3s ease;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 0.3s ease;
 
       &:hover {
         background: var(--color-red-dark);
@@ -113,5 +127,64 @@
       font-size: 14px;
       font-weight: var(--font-weight-light);
     }
+
+    &--btn {
+      padding: 16px 24px;
+      width: 300px;
+      background-color: var(--color-red);
+      border-radius: 8px;
+      font-weight: var(--font-weight-bold);
+      font-family: "new-BebasNeue-Bold", sans-serif;
+      font-size: 23px;
+      line-height: 1em;
+      color: var(--color-white);
+      border: none;
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      font-family: sans-serif;
+      font-weight: var(--font-weight-light);
+      font-size: 14px;
+      line-height: 1.5em;
+      color: hsla(0, 0%, 100%, .8);
+      display: block;
+      max-width: 276px;
+      overflow: hidden;
+    }
+  }
+}
+
+
+
+//Анимация кнопок в header-content__buttons при hover
+.button-hover {
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.02) translateZ(0);
+  }
+
+  &:before {
+    background: linear-gradient(270deg, #ca131a, #920b10);
+    background: var(--gradient-red);
+    border-radius: 8px;
+    content: "";
+    height: calc(100% + 1px);
+    left: -1px;
+    opacity: 0;
+    position: absolute;
+    top: -1px;
+    transform: scale(.8) translateZ(0);
+    transition: all .15s ease-in-out;
+    width: calc(100% + 1px);
+    z-index: -1;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    transform: scale(1.01) translateZ(0);
+    padding: 15px 13px 11px;
   }
 }
