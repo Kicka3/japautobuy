@@ -88,11 +88,33 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "new-BebasNeue-Regular";
+  src: url("../fonts/BebasNeueRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "new-BebasNeue-Book";
+  src: url("../fonts/BebasNeueBook.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "new-BebasNeue-Bold";
+  src: url("../fonts/BebasNeueBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-weight: 400;
   line-height: 1.28;
   color: var(--color-title);
   background-color: var(--color-white);
+  font-family: sans-serif;
 }
 
 a,
@@ -300,10 +322,11 @@ svg * {
   }
 }
 .main-header {
-  background: url("../../../images/header-main.jpg") no-repeat center center;
+  background: url("../../../images/first-desktop.jpg") 50%/cover no-repeat;
   background-size: cover;
   padding-bottom: 48px;
-  height: 100vh;
+  --main-content-width: 400px;
+  --button-link-size: 19px;
 }
 
 .header {
@@ -326,8 +349,7 @@ svg * {
 .header__menu {
   margin-top: 6px;
   white-space: nowrap;
-  letter-spacing: -1px;
-  padding: 0 48px;
+  padding: 0 48px 0 48px;
   border-left: 1px solid hsla(0, 0%, 100%, 0.1);
   border-right: 1px solid hsla(0, 0%, 100%, 0.1);
 }
@@ -335,7 +357,7 @@ svg * {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  column-gap: 50px;
+  column-gap: 49px;
 }
 .header__menu-link {
   display: inline-flex;
@@ -345,7 +367,7 @@ svg * {
   color: var(--color-white);
   font-size: 1.25rem;
   font-weight: var(--font-weight-bold);
-  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+  font-family: "new-BebasNeue-Bold", sans-serif;
 }
 @media (hover: hover) {
   .header__menu-link:hover::after {
@@ -371,39 +393,46 @@ svg * {
   align-content: center;
   justify-content: center;
   flex-wrap: nowrap;
-  column-gap: 33px;
+  column-gap: 30px;
   color: var(--color-white);
   margin-top: 10px;
   font-weight: var(--font-weight-bold);
-  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+  font-family: "new-BebasNeue-Bold", sans-serif;
 }
 .header__menu-right-icons {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
   flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 4px;
 }
 .header__menu-right-icons .icon__image {
   color: #fff;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 45px;
 }
 .header__menu-contacts {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-family: "new-BebasNeue-Bold", sans-serif;
   white-space: nowrap;
-  letter-spacing: -1px;
 }
 .header__services {
   display: flex;
   flex-direction: column;
 }
+.header__services-title {
+  line-height: 23px;
+}
 .header__services-phone {
   color: #fff;
-  font-size: 1.625rem;
+  font-weight: var(--font-weight-bold);
+  font-family: "new-BebasNeue-Bold", sans-serif;
+  font-size: 1.75rem;
+  line-height: 30px;
 }
 .header__services-description {
   color: #a3a3a3;
@@ -413,38 +442,40 @@ svg * {
   font-family: sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 0.83rem;
+  font-size: 0.75rem;
 }
 
 .header-content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .header-content__title-wrapper {
   grid-column: 1/7;
-  margin-top: 38px;
-  margin-bottom: 32px;
+  margin: 32px 0;
+  overflow: hidden;
 }
 .header-content__title {
   display: flex;
   flex-direction: column;
-  font-size: 44px;
-  line-height: 1.1em;
+  font-size: 50px;
+  line-height: 1em;
   width: 400px;
   text-transform: uppercase;
   color: var(--color-white);
   font-weight: var(--font-weight-bold);
-  font-family: "BebasNeuePro-SemiExpBold", sans-serif;
-  margin-bottom: 30px;
+  font-family: "new-BebasNeue-Bold", sans-serif;
+  margin-bottom: 24px;
 }
 .header-content__title-sub {
   color: hsla(0, 0%, 100%, 0.7);
-  letter-spacing: 1px;
+  letter-spacing: 1.19px;
   font-style: normal;
-  font-family: var(--font-condensed), sans-serif;
   font-weight: var(--font-weight-light);
-  font-size: x-large;
-  line-height: 2;
+  font-family: "new-BebasNeue-Book", sans-serif;
+  font-size: 38px;
+  line-height: 53px;
 }
 .header-content__title-team {
   color: #fff;
@@ -459,7 +490,9 @@ svg * {
   justify-self: end;
   margin-bottom: 0;
   align-self: center;
-  margin-top: 34px;
+  overflow: hidden;
+  padding: 0 3px 0 4px;
+  margin-top: -88px;
 }
 .header-content__button {
   margin-bottom: 16px;
@@ -468,37 +501,46 @@ svg * {
   background: hsla(0, 0%, 100%, 0.1);
   border: 1px solid hsla(276, 5%, 80%, 0.1);
   height: 60px;
-  padding-bottom: 10px;
-  padding-top: 12px;
   width: 288px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
   color: var(--color-white);
-  font-family: var(--font-condensed), sans-serif;
-  font-weight: var(--font-weight-bold);
+  padding: 14px 8px 10px 13px;
   font-size: 16px;
   text-transform: uppercase;
   transition: background 0.3s ease;
   border-radius: 8px;
 }
-.header-content__button-link:hover {
-  background: hsla(0, 0%, 100%, 0.2);
-}
 .header-content__button-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 6px;
+  font-size: 1rem;
+}
+.header-content__button-content-text {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  font-family: "new-BebasNeue-Bold", sans-serif;
+  line-height: 1em;
+  font-size: 1.19rem;
+}
+.header-content__button-content-sub {
+  font-family: sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--color-title);
 }
 .header-content__button-icon {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   fill: var(--color-white);
 }
 .header-content__submit {
   grid-column: 1/7;
-  margin-top: 24px;
+  margin-bottom: 88px;
 }
 .header-content__submit-button {
   color: var(--color-white);
@@ -506,9 +548,9 @@ svg * {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: var(--font-weight-bold);
+  transition: background 0.3s ease;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 .header-content__submit-button:hover {
   background: var(--color-red-dark);
@@ -518,6 +560,79 @@ svg * {
   color: hsla(0, 0%, 100%, 0.7);
   font-size: 14px;
   font-weight: var(--font-weight-light);
+}
+.header-content__submit--btn {
+  padding: 16px 24px;
+  width: 300px;
+  background-color: var(--color-red);
+  border-radius: 8px;
+  font-weight: var(--font-weight-bold);
+  font-family: "new-BebasNeue-Bold", sans-serif;
+  font-size: 23px;
+  line-height: 1em;
+  color: var(--color-white);
+  border: none;
+  margin-bottom: 16px;
+}
+.header-content__submit-text {
+  font-family: sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: 14px;
+  line-height: 1.5em;
+  color: hsla(0, 0%, 100%, 0.8);
+  display: block;
+  max-width: 276px;
+  overflow: hidden;
+}
+
+.button-hover {
+  position: relative;
+  z-index: 1;
+}
+.button-hover:hover {
+  transform: scale(1.02) translateZ(0);
+}
+.button-hover:before {
+  background: linear-gradient(270deg, #ca131a, #920b10);
+  background: var(--gradient-red);
+  border-radius: 8px;
+  content: "";
+  height: calc(100% + 1px);
+  left: -1px;
+  opacity: 0;
+  position: absolute;
+  top: -1px;
+  transform: scale(0.8) translateZ(0);
+  transition: all 0.15s ease-in-out;
+  width: calc(100% + 1px);
+  z-index: -1;
+}
+.button-hover:hover:before {
+  opacity: 1;
+  transform: scale(1.01) translateZ(0);
+  padding: 15px 13px 11px;
+}
+
+.header-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.header-footer__menu-list {
+  font-family: sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: 0.8125rem;
+}
+.header-footer__menu-item-icon {
+  width: 20px;
+  height: 20px;
+}
+.header-footer__social-item-icon {
+  width: 32px;
+  height: 32px;
 }
 
 /*# sourceMappingURL=styles.css.map */

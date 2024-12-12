@@ -23,3 +23,29 @@
   font-style: normal;
   font-display: swap;
 }
+
+
+//новые
+@font-face {
+  font-family: "new-BebasNeue-Regular";
+  src: url("../fonts/BebasNeueRegular.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "new-BebasNeue-Book";
+  src: url('../fonts/BebasNeueBook.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "new-BebasNeue-Bold";
+  src: url("../fonts/BebasNeueBold.woff2") format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

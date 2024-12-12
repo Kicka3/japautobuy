@@ -1,6 +1,7 @@
 .main-header {
-  background: url("../../../images/header-main.jpg") no-repeat center center;
+  background: url("../../../images/first-desktop.jpg") 50% / cover no-repeat;;
   background-size: cover;
   padding-bottom: 48px;
-  height: 100vh;
+  --main-content-width: 400px;
+  --button-link-size: 19px;
 }
