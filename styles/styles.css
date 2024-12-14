@@ -324,7 +324,7 @@ svg * {
 .main-header {
   background: url("../../../images/first-desktop.jpg") 50%/cover no-repeat;
   background-size: cover;
-  padding-bottom: 48px;
+  padding-bottom: 8px;
   --main-content-width: 400px;
   --button-link-size: 19px;
 }
@@ -359,6 +359,59 @@ svg * {
   align-items: center;
   column-gap: 49px;
 }
+.header__menu-item {
+  position: relative;
+}
+.header__menu-item::after {
+  content: "";
+  position: absolute;
+  top: 144%; /* Расположение полоски */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #ca131a, #920b10);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.header__menu-item:hover::after {
+  opacity: 1;
+}
+.header__menu-item:hover .header__menu-item__sublist {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Восстанавливаем подменю на прежнюю позицию */
+}
+.header__menu__sublist {
+  display: flex;
+  flex-direction: row;
+  background: var(--color-red-dark);
+  z-index: 10;
+  list-style-type: none;
+  box-sizing: border-box;
+  height: 0;
+  justify-content: flex-start;
+  position: fixed;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.15s linear;
+  width: 100%;
+}
+.header__menu__sublist-section {
+  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.header__menu__sublist-section:not(:last-child) {
+  padding-right: 56px;
+  margin-right: 56px;
+}
+.header__menu__sublist-item {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1em;
+  font-family: sans-serif;
+}
 .header__menu-link {
   display: inline-flex;
   align-items: center;
@@ -369,23 +422,8 @@ svg * {
   font-weight: var(--font-weight-bold);
   font-family: "new-BebasNeue-Bold", sans-serif;
 }
-@media (hover: hover) {
-  .header__menu-link:hover::after {
-    width: 100%;
-  }
-}
-@media (hover: none) {
-  .header__menu-link:active::after {
-    width: 100%;
-  }
-}
-.header__menu-link::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(270deg, #ca131a, #920b10);
+.header__menu-sublist {
+  display: flex;
 }
 .header__menu-right {
   display: flex;
@@ -616,21 +654,85 @@ svg * {
 .header-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   color: white;
   font-size: 1rem;
   white-space: nowrap;
+  align-items: center;
 }
 .header-footer__menu-list {
   font-family: sans-serif;
   font-weight: var(--font-weight-regular);
   font-size: 0.8125rem;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}
+.header-footer__menu-item {
+  align-items: center;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.15);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.15);
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 48px 32px;
+  width: auto;
 }
 .header-footer__menu-item-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+}
+.header-footer__menu-item span {
+  margin-bottom: 10px;
+}
+.header-footer__menu-item--link {
+  column-gap: 7px;
+}
+.header-footer__menu-item--link span {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.header-footer__menu-address-list {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  max-width: 289px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.header-footer__menu-address-item {
+  line-height: 1.3em;
+  margin-bottom: 8px;
+  word-wrap: break-word; /* Обеспечивает перенос длинных слов */
+  overflow-wrap: break-word; /* Дополнительное свойство для переноса текста */
+  white-space: normal; /* Убедитесь, что текст переносится */
+}
+.header-footer__social-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 32px 40px 32px;
+  gap: 24px;
+}
+.header-footer__social-item {
+  height: 32px;
+  width: 32px;
+  padding: 0;
 }
 .header-footer__social-item-icon {
+  width: 32px;
+  height: 32px;
+}
+.header-footer__contact-list {
+  display: flex;
+  flex-direction: row;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.15);
+  align-items: center;
+  padding-bottom: 33px;
+  padding-left: 32px;
+  gap: 24px;
+}
+.header-footer__contact-icon {
   width: 32px;
   height: 32px;
 }

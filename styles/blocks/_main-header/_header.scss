@@ -33,6 +33,112 @@
       column-gap: 49px;
     }
 
+    //&-item {
+    //  position: relative;
+    //
+    //  @include media.hover {
+    //    &:hover::after {
+    //      opacity: 1;
+    //      transition: opacity 0.2s ease-in-out;
+    //    }
+    //  }
+    //
+    //  &::after {
+    //    content: "";
+    //    position: absolute;
+    //    top: 144%;
+    //    left: 0;
+    //    width: 100%;
+    //    height: 2px;
+    //    background: linear-gradient(270deg, #ca131a, #920b10);
+    //    opacity: 0;
+    //    transition: opacity 0.2s ease-in-out;
+    //  }
+    //}
+    // Элементы основного меню
+    &-item {
+      position: relative;
+
+      // Полоска снизу
+      &::after {
+        content: "";
+        position: absolute;
+        top: 144%; /* Расположение полоски */
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, #ca131a, #920b10); // Цвет градиента
+        opacity: 0; // Скрыта по умолчанию
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      // Показываем полоску при наведении на пункт меню
+      &:hover::after {
+        opacity: 1;
+      }
+
+      // Показ подменю при hover
+      &:hover &__sublist {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); /* Восстанавливаем подменю на прежнюю позицию */
+      }
+    }
+
+    // Подменю
+    &__sublist {
+      //position: absolute;
+      //top: 100%; /* Вылезаем прямо под основным пунктом */
+      //left: 0;
+      //width: 100%;
+      display: flex;
+      flex-direction: row;
+      //opacity: 0;  /* Изначально скрыто */
+      //visibility: hidden;  /* Не отображается */
+      //transform: translateY(10px);  /* Сдвигаем вниз, пока не ховерим */
+      background: var(--color-red-dark);
+      //padding: 10px 0;
+      z-index: 10;
+      //transition: all .15s linear;
+      //height: auto;
+      list-style-type: none;
+      box-sizing: border-box;
+
+      //===
+      height: 0;
+      justify-content: flex-start;
+      position: fixed;
+      //left: 0;
+      //top: 0;
+      transform: translate3d(0, -100%, 0);
+      transition: all .15s linear;
+      width: 100%;
+
+      &-section {
+        border-right: 1px solid hsla(0, 0%, 100%, .1);
+        display: flex;
+        flex-direction: column;
+        width: auto;
+      }
+
+      &-section:not(:last-child) {
+        padding-right: 56px;
+        margin-right: 56px;
+      }
+
+      &-item {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1em;
+        font-family: sans-serif;
+      }
+    }
+
+
+
+
+
     &-link {
       display: inline-flex;
       align-items: center;
@@ -42,21 +148,11 @@
       font-size: 1.25rem;
       font-weight: var(--font-weight-bold);
       font-family: "new-BebasNeue-Bold", sans-serif;
+    }
 
-      @include media.hover {
-        &::after {
-          width: 100%;
-        }
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(270deg, #ca131a, #920b10);
-      }
+    // sublist
+    &-sublist {
+      display: flex;
     }
 
     &-right {
