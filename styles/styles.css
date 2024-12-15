@@ -376,24 +376,29 @@ svg * {
 .header__menu-item:hover::after {
   opacity: 1;
 }
-.header__menu-item:hover .header__menu-item__sublist {
+.header__menu-item:hover .header__menu__sublist {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0); /* Восстанавливаем подменю на прежнюю позицию */
+  top: 0;
 }
 .header__menu__sublist {
+  z-index: 3;
+  top: -100%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
   background: var(--color-red-dark);
-  z-index: 10;
+  transition: all 0.15s linear;
   list-style-type: none;
   box-sizing: border-box;
-  height: 0;
   justify-content: flex-start;
   position: fixed;
-  transform: translate3d(0, -100%, 0);
-  transition: all 0.15s linear;
-  width: 100%;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  padding: 160px 351px 202px 351px;
 }
 .header__menu__sublist-section {
   border-right: 1px solid hsla(0, 0%, 100%, 0.1);
@@ -481,6 +486,12 @@ svg * {
   font-weight: 300;
   font-style: normal;
   font-size: 0.75rem;
+}
+.header__sublist-container {
+  max-height: 122px;
+  width: 100%;
+  background: var(--color-red-dark);
+  z-index: 3;
 }
 
 .header-content {
