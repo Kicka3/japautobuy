@@ -321,6 +321,142 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+@keyframes showDownTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showTopDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideTopDown {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+  }
+}
+@keyframes showDownTopOpacity {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideDownTopOpacity {
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideDownTop {
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showDownTopSmall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideDownTopSmall {
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showLeftRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideLeftRight {
+  100% {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showRightLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideRightLeft {
+  100% {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hideOpacity {
+  100% {
+    opacity: 0;
+    transform: scale(0) translate3d(0, 0, 0);
+  }
+  0% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+@keyframes showOpacity {
+  0% {
+    opacity: 0;
+    transform: scale(0) translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
 .main-header {
   background: url("../../../images/first-desktop.jpg") 50%/cover no-repeat;
   background-size: cover;
@@ -331,6 +467,7 @@ svg * {
 
 .header {
   margin-bottom: 96px;
+  position: relative;
 }
 .header__logo {
   margin-top: 8px;
@@ -345,6 +482,8 @@ svg * {
   column-gap: 16px;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   min-height: 122px;
+  position: relative;
+  z-index: 997;
 }
 .header__menu {
   margin-top: 6px;
@@ -382,40 +521,76 @@ svg * {
   top: 0;
 }
 .header__menu__sublist {
-  z-index: 3;
-  top: -100%;
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
   background: var(--color-red-dark);
   transition: all 0.15s linear;
   list-style-type: none;
   box-sizing: border-box;
   justify-content: flex-start;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   left: 0;
   right: 0;
-  padding: 160px 351px 202px 351px;
+  padding: 164px 70px 54px;
+  max-width: 100%;
+  z-index: -1;
+  visibility: hidden;
+  top: -100%;
+  opacity: 0;
+}
+.header__menu__sublist::before {
+  content: "";
+  flex: 0 0 100%;
+  max-width: calc((100% - var(--container-width-max)) / 2);
+  width: 100%;
+}
+.header__menu__sublist::after {
+  content: "";
+  flex: 0 0 100%;
+  max-width: calc((100% - var(--container-width-max)) / 2);
+  width: 100%;
 }
 .header__menu__sublist-section {
-  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
   display: flex;
   flex-direction: column;
   width: auto;
-}
-.header__menu__sublist-section:not(:last-child) {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 3px;
   padding-right: 56px;
   margin-right: 56px;
 }
+.header__menu__sublist-section:nth-child(1) {
+  padding-top: 6px;
+}
+.header__menu__sublist-section:not(:last-child) {
+  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+.header__menu__sublist-title {
+  color: #a3a3a3;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+.header__menu__sublist-links {
+  font-size: 1rem;
+}
 .header__menu__sublist-item {
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.2em;
+  font-family: sans-serif;
+  margin-bottom: 12px;
+}
+.header__menu__sublist-link {
+  color: #fff;
+  font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1em;
-  font-family: sans-serif;
 }
 .header__menu-link {
   display: inline-flex;
@@ -486,12 +661,6 @@ svg * {
   font-weight: 300;
   font-style: normal;
   font-size: 0.75rem;
-}
-.header__sublist-container {
-  max-height: 122px;
-  width: 100%;
-  background: var(--color-red-dark);
-  z-index: 3;
 }
 
 .header-content {
@@ -687,6 +856,7 @@ svg * {
   margin: 0;
   padding: 4px 48px 32px;
   width: auto;
+  transition: all 0.15s ease-in-out;
 }
 .header-footer__menu-item-icon {
   width: 18px;
@@ -701,6 +871,13 @@ svg * {
 .header-footer__menu-item--link span {
   text-decoration: underline;
   margin-bottom: 10px;
+}
+.header-footer__menu-item--link:hover {
+  transition: all 0.15s ease-in-out;
+  color: var(--color-red);
+}
+.header-footer__menu-item--link:hover svg {
+  transform: scale(1.1) translateZ(0);
 }
 .header-footer__menu-address-list {
   font-family: Roboto, sans-serif;
@@ -734,6 +911,10 @@ svg * {
   width: 32px;
   height: 32px;
 }
+.header-footer__social-item-icon:hover {
+  fill: var(--color-red);
+  color: var(--color-red);
+}
 .header-footer__contact-list {
   display: flex;
   flex-direction: row;
@@ -746,6 +927,20 @@ svg * {
 .header-footer__contact-icon {
   width: 32px;
   height: 32px;
+}
+
+/* Стили для каждой иконки */
+.header-footer__social-item-icon {
+  transition: fill 0.3s ease, stroke 0.3s ease; /* Добавление плавного перехода для цвета */
+}
+
+/* Стиль для изменения цвета иконки на красный при наведении */
+.header-footer__social-item-icon:hover .icon-path-stroke {
+  stroke: red !important; /* Изменение обводки иконки на красный */
+}
+
+.header-footer__social-item-icon:hover .icon-path-fill {
+  fill: red !important; /* Изменение заливки на красный */
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,141 @@
+@keyframes showDownTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,20px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes showTopDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-100px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes hideTopDown {
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0,-100px,0);
+  }
+}
+
+@keyframes showDownTopOpacity {
+  0% { transform: translate3d(0, 100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hideDownTopOpacity {
+  100% { transform: translate3d(0, 100%, 0); }
+  0% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hideDownTop {
+  100% {
+    opacity: 0;
+    transform: translate3d(0,20px,0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes showDownTopSmall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes hideDownTopSmall {
+  100% {
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes showLeftRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-20px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes hideLeftRight {
+  100% {
+    opacity: 0;
+    transform: translate3d(-20px,0,0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes showRightLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(20px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes hideRightLeft {
+  100% {
+    opacity: 0;
+    transform: translate3d(20px,0,0);
+  }
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes hideOpacity {
+  100% {
+    opacity: 0;
+    transform: scale(0) translate3d(0,0,0);
+  }
+  0% {
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+@keyframes showOpacity {
+  0% {
+    opacity: 0;
+    transform: scale(0) translate3d(0,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}

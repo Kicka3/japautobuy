@@ -7,7 +7,6 @@
   align-items: center;
 
   &__menu {
-
     &-list {
       font-family: sans-serif;
       font-weight: var(--font-weight-regular);
@@ -26,6 +25,7 @@
       margin: 0;
       padding: 4px 48px 32px;
       width: auto;
+      transition: all .15s ease-in-out;
 
       &-icon {
         width: 18px;
@@ -42,6 +42,15 @@
         & span {
           text-decoration: underline;
           margin-bottom: 10px;
+        }
+
+        &:hover {
+          transition: all .15s ease-in-out;
+          color: var(--color-red);
+        }
+
+        &:hover svg {
+          transform: scale(1.1) translateZ(0);
         }
       }
     }
@@ -76,7 +85,6 @@
       gap: 24px;
     }
 
-
     &-item {
       height: 32px;
       width: 32px;
@@ -85,12 +93,16 @@
       &-icon {
         width: 32px;
         height: 32px;
+
+        &:hover {
+          fill: var(--color-red);
+          color:var(--color-red);
+        }
       }
     }
   }
 
   &__contact {
-
     &-list {
       display: flex;
       flex-direction: row;
@@ -106,4 +118,18 @@
       height: 32px;
     }
   }
+}
+
+/* Стили для каждой иконки */
+.header-footer__social-item-icon {
+  transition: fill 0.3s ease, stroke 0.3s ease; /* Добавление плавного перехода для цвета */
+}
+
+/* Стиль для изменения цвета иконки на красный при наведении */
+.header-footer__social-item-icon:hover .icon-path-stroke {
+  stroke: red !important; /* Изменение обводки иконки на красный */
+}
+
+.header-footer__social-item-icon:hover .icon-path-fill {
+  fill: red !important; /* Изменение заливки на красный */
 }
