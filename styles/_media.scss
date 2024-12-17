@@ -40,12 +40,6 @@ $mobile-s: 480px;
   }
 }
 
-@mixin mobile {
-  @media (max-width: $mobile) {
-    @content;
-  }
-}
-
 @mixin mobile-s-above {
   @media (min-width: $mobile-s-above) {
     @content;

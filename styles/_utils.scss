@@ -1,11 +1,17 @@
 @use 'media';
 
 .container {
-  //max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   display: flex;
   max-width: 1200px;
   margin-inline: auto;
-  //padding-inline: var(--container-padding-x);
+
+  @include media.tablet {
+    max-width: var(--container-lg);
+    border-bottom: none;
+    display: flex;
+    flex-flow: row wrap;
+    padding-bottom: 0;
+  }
 }
 
 .visually-hidden {
@@ -22,7 +28,19 @@
 }
 
 .hidden-mobile {
-  @include media.mobile {
+  @include media.mobile-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include media.tablet-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet-below {
+  @include media.tablet {
     display: none !important;
   }
 }
