@@ -12,4 +12,9 @@
     --main-content-width: 292px;
     margin-bottom: 80px;
   }
+
+  @include media.mobile-l {
+    background: url("../../../images/first-mobile.jpg") 50% / cover no-repeat;
+    padding-bottom: 72px;
+  }
 }

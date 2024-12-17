@@ -12,6 +12,11 @@
     flex-flow: row wrap;
     padding-bottom: 0;
   }
+
+  @include media.mobile-l {
+    padding-bottom: 72px;
+    max-width: var(--container-xs);
+  }
 }
 
 .visually-hidden {
@@ -32,6 +37,13 @@
     display: none !important;
   }
 }
+
+.hidden-mobile-l {
+  @include media.mobile-l {
+    display: none !important;
+  }
+}
+
 
 .hidden-tablet {
   @include media.tablet-above {

@@ -1,3 +1,5 @@
+@use '../../media' as media;
+
 .header-footer {
   display: flex;
   flex-direction: row;
@@ -44,7 +46,7 @@
           margin-bottom: 10px;
         }
 
-        &:hover {
+        @include media.hover {
           transition: all .15s ease-in-out;
           color: var(--color-red);
         }
@@ -94,7 +96,12 @@
         width: 32px;
         height: 32px;
 
-        &:hover {
+        @include media.mobile {
+          width: 28px;
+          height: 28px;
+        }
+
+        @include media.hover {
           fill: var(--color-red);
           color:var(--color-red);
         }
@@ -116,6 +123,12 @@
     &-icon {
       width: 32px;
       height: 32px;
+
+      @include media.mobile {
+        width: 28px;
+        height: 28px;
+      }
+
     }
   }
 }

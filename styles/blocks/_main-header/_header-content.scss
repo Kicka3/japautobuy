@@ -80,7 +80,7 @@
       align-self: auto;
     }
 
-    @include media.mobile-above {
+    @include media.mobile {
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -130,9 +130,14 @@
         line-height: 1em;
         font-size: 1.19rem;
 
-        @include media.mobile-above {
+
+        @include media.mobile-above-mode-max{
           font-size: 22px;
-          line-height: 19px;
+          line-height: 22px;
+        }
+        @include media.mobile {
+          font-size: 22px;
+          line-height: 22px;
         }
       }
 
@@ -169,7 +174,7 @@
       text-transform: uppercase;
       cursor: pointer;
 
-      &:hover {
+      @include media.hover {
         background: var(--color-red-dark);
       }
     }

@@ -40,7 +40,7 @@
   --transition-duration: 0.2s;
 
   //Удалить
-  --container-xs: calc(100% - var(--container-padding)* 2);
+  --container-xs: calc(100% - 32px * 2);
   --container-md: calc(var(--md) - var(--container-padding)* 2);
   --container-lg: calc(var(--lg) - var(--container-padding)* 2);
   --container-xl: calc(var(--xl) - var(--container-padding)* 2);
