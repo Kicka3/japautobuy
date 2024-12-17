@@ -1,8 +1,15 @@
+@use '../../media' as media;
+
 .header-content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-sizing: border-box;
+
+  @include media.tablet{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
 
   &__title-wrapper {
     grid-column: 1 / 7;
@@ -22,6 +29,10 @@
     font-family: "new-BebasNeue-Bold", sans-serif;
     margin-bottom: 24px;
 
+    @include media.tablet{
+      font-size: 45px;
+    }
+
     &-sub {
       color: hsla(0, 0%, 100%, 0.7);
       letter-spacing: 1.19px;
@@ -30,6 +41,13 @@
       font-family: "new-BebasNeue-Book", sans-serif;
       font-size: 38px;
       line-height: 53px;
+
+      @include media.tablet{
+        font-size: 2rem;
+        max-width: 292px;
+        font-weight: 300;
+        line-height: 43px;
+      }
     }
 
     &-team {
@@ -38,6 +56,10 @@
       line-height: 1.5em;
       width: 400px;
       font-family: sans-serif;
+
+      @include media.tablet{
+        width: 292px;
+      }
     }
   }
 
@@ -50,6 +72,20 @@
     overflow: hidden;
     padding: 0 3px 0 4px;
     margin-top: -88px;
+
+    @include media.tablet{
+      border: none;
+      padding: 0;
+      margin-top: 10px;
+      align-self: auto;
+    }
+
+    @include media.mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
   }
 
   &__button {
@@ -70,6 +106,14 @@
       text-transform: uppercase;
       transition: background 0.3s ease;
       border-radius: 8px;
+
+      @include media.tablet{
+        border: none;
+        padding: 0;
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
     }
 
     &-content {
@@ -85,6 +129,16 @@
         font-family: "new-BebasNeue-Bold", sans-serif;
         line-height: 1em;
         font-size: 1.19rem;
+
+
+        @include media.mobile-above-mode-max{
+          font-size: 22px;
+          line-height: 22px;
+        }
+        @include media.mobile {
+          font-size: 22px;
+          line-height: 22px;
+        }
       }
 
       &-sub {
@@ -92,6 +146,10 @@
         font-size: .62rem;
         font-weight: 500;
         color: var(--color-title);
+      }
+
+      @include media.tablet{
+        margin-right: 24px;
       }
     }
 
@@ -116,7 +174,7 @@
       text-transform: uppercase;
       cursor: pointer;
 
-      &:hover {
+      @include media.hover {
         background: var(--color-red-dark);
       }
     }
@@ -140,6 +198,12 @@
       color: var(--color-white);
       border: none;
       margin-bottom: 16px;
+
+      @include media.tablet{
+        max-width: 292px;
+        line-height: .8em;
+        margin-top: 6px;
+      }
     }
 
     &-text {
@@ -151,11 +215,13 @@
       display: block;
       max-width: 276px;
       overflow: hidden;
+
+      @include media.tablet{
+        font-size: 12px;
+      }
     }
   }
 }
-
-
 
 //Анимация кнопок в header-content__buttons при hover
 .button-hover {
