@@ -3,18 +3,15 @@
 .main-header {
   background: url("../../../images/first-desktop.jpg") 50% / cover no-repeat;;
   background-size: cover;
-  padding-bottom: 8px;
   --main-content-width: 400px;
   --button-link-size: 19px;
 
   @include media.tablet {
     background: url("../../../images/first-mobile-landscape.jpg") 50% / cover no-repeat;
     --main-content-width: 292px;
-    margin-bottom: 80px;
   }
 
   @include media.mobile-l {
     background: url("../../../images/first-mobile.jpg") 50% / cover no-repeat;
-    padding-bottom: 72px;
   }
 }

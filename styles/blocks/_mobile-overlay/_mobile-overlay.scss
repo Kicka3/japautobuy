@@ -1,0 +1,180 @@
+@use '../../media' as media;
+@use '../../mixins' as mixin;
+@use '../../animations' as *;
+
+.mobile-overlay {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: radial-gradient(105% 90% at 50% 100%, rgba(70, 0, 0, .9) 0, rgba(9, 0, 0, .95) 100%);
+  overflow-y: auto;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  animation: showDownTop 0.3s ease-out forwards;
+
+  /* Оптимизация анимаций */
+  will-change: transform, opacity;
+
+  &:modal {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+&__content {
+  animation: none;
+}
+
+  &__header {
+    &-inner {
+      padding: 0 32px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    &-body {
+      align-items: center;
+      border-bottom: 1px solid hsla(0, 0%, 100%, .15);
+      display: flex;
+      justify-content: space-between;
+      padding: 26px 0 22px;
+      width: 100%;
+    }
+  }
+
+  &__logo__image {
+    width: 44px;
+    height: 44px;
+  }
+
+  &__cross-button {
+    @include mixin.reset-button;
+    @include mixin.square(48px);
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    color: white;
+
+    &:hover {
+      transform: scale(1.2) translateZ(0);
+    }
+
+    &:active {
+      transform: scale(0.8) translateZ(0);
+    }
+  }
+
+  &__body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 64px);
+    width: calc(100% - 64px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 24px;
+    padding-left: 0;
+    padding-top: 40px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    color: #fff !important;
+    display: flex;
+    font-family: new-BebasNeue-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__child {
+    border-bottom: 1px dashed hsla(0, 0%, 100%, .15);
+    margin-bottom: 16px;
+    margin-top: 0;
+    padding-bottom: 24p;
+
+    &-list {
+      border-bottom: 1px dashed hsla(0, 0%, 100%, .15);
+      margin-bottom: 16px;
+      margin-top: 0;
+      padding-bottom: 24px;
+      padding-left: 0;
+    }
+
+    &-item {
+      &:first-child {
+        margin: 8px 0;
+      }
+    }
+
+    &__link {
+      color: #827a7a !important;
+      display: flex;
+      font-family: new-BebasNeue-Regular, sans-serif;
+      font-size: .9375rem;
+      font-weight: 400;
+      justify-content: space-between;
+      text-transform: uppercase;
+      width: 100%;
+
+      &-icon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+/* Класс для закрытия, когда анимация завершается */
+.mobile-overlay.close {
+  animation: hideDownTop 0.3s ease-in forwards;
+}
+
+/* Анимация для модального окна, когда текст появляется по очереди */
+.visible-mobile .mobile-overlay__content {
+  animation: listItemAppear 0.8s ease-in-out;
+}
+.mobile-overlay__item {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: none;
+}
+.mobile-overlay__item {
+  animation: listItemAppear 0.3s ease-in-out forwards;
+  opacity: 0;
+}
+@for $i from 1 through 10 {
+  .mobile-overlay__item:nth-child(#{$i}) {
+    animation-delay: 0.1s * ($i - 1);
+  }
+}

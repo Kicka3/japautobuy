@@ -21,7 +21,8 @@
   }
 
   @include media.mobile-l {
-    padding-top: 16px;
+    padding-top: 18px;
+    margin-bottom: 31px;
   }
 
   &__logo {
@@ -34,13 +35,33 @@
       margin-top: 0;
       margin-right: 0;
     }
-
     @include media.mobile {
       margin-right: 0;
     }
+    @include media.mobile-l {
+      margin-top: 30px;
+      width: 98px;
+      height: auto;
+    }
+    @include media.mobile-m {
+      margin-top: 18px;
+      width: 80px;
+    }
 
-    @include media.mobile-l{
-      width: 94px;
+    &-text {
+      color: #fff;
+      display: block;
+      font-family: "new-BebasNeue-Bold", sans-serif;
+      font-size: 1.563rem;
+      font-weight: 400;
+      margin-top: 4px;
+      text-transform: uppercase;
+      line-height: 1.3em;
+
+      @include media.mobile-m {
+        margin-top: 4px;
+        font-size: 1.22rem;
+      }
     }
   }
 
@@ -61,7 +82,7 @@
       column-gap: 0;
     }
 
-    @include media.mobile-l{
+    @include media.mobile-l {
       padding: 0;
       border: none;
     }
@@ -107,12 +128,15 @@
 
     &__social-list {
       display: flex;
-      padding-right: 30px;
-      padding-left: 30px;
-      gap: 18px;
+      padding-right: 10px;
+      gap: 25px;
 
       @include media.mobile-l {
-        margin-top: 33px;
+        margin-top: 28px;
+      }
+      @include media.mobile-s {
+        padding-right: 0;
+        gap: 10px;
       }
     }
 
@@ -165,9 +189,6 @@
       visibility: hidden;
       top: -100%;
       opacity: 0;
-      //opacity: 1;
-      //visibility: visible;
-      //top: 0;
 
       &::before {
         content: "";
@@ -264,9 +285,11 @@
       @include media.mobile {
         column-gap: 0;
       }
-
       @include media.tablet {
         column-gap: 0;
+      }
+      @include media.mobile-m {
+        margin-top: 0;
       }
 
       &-icons {
@@ -448,7 +471,7 @@
         @include media.mobile-above-mode-max {
           gap: 10px
         }
-        
+
         @include media.mobile {
           gap: 14px;
         }
@@ -493,4 +516,23 @@
       }
     }
   }
+}
+
+
+/* Слой для блюра */
+.header__overlay--blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(16px);
+  z-index: 5;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.header__menu-item:hover ~ .header__overlay--blur {
+  visibility: visible;
+  pointer-events: auto;
 }
