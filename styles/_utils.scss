@@ -14,7 +14,6 @@
   }
 
   @include media.mobile-l {
-    padding-bottom: 72px;
     max-width: var(--container-xs);
   }
 }
@@ -40,6 +39,12 @@
 
 .hidden-mobile-l {
   @include media.mobile-l {
+    display: none !important;
+  }
+}
+
+.hidden-mobile-l-above {
+  @include media.mobile-l-above {
     display: none !important;
   }
 }

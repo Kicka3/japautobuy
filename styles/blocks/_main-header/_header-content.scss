@@ -11,10 +11,21 @@
     grid-template-columns: repeat(12, 1fr);
   }
 
+  @include media.mobile {
+    display: block;
+  }
+
   &__title-wrapper {
     grid-column: 1 / 7;
     margin: 32px 0;
     overflow: hidden;
+
+    @include media.mobile-l {
+      margin: 32px 0 58px;
+    }
+    @include media.mobile-m {
+      margin: 21px 0 57px
+    }
   }
 
   &__title {
@@ -32,6 +43,15 @@
     @include media.tablet{
       font-size: 45px;
     }
+    @include media.mobile-l {
+      font-size: 3.125rem;
+      font-weight: 700;
+      line-height: 1em;
+      margin-bottom: 0;
+    }
+    @include media.mobile-m {
+      font-size: 2.813rem;
+    }
 
     &-sub {
       color: hsla(0, 0%, 100%, 0.7);
@@ -46,7 +66,12 @@
         font-size: 2rem;
         max-width: 292px;
         font-weight: 300;
-        line-height: 43px;
+        line-height: 46px;
+      }
+
+      @include media.mobile-m{
+        font-size: 1.875rem;
+        line-height: 38px;
       }
     }
 
@@ -79,13 +104,15 @@
       margin-top: 10px;
       align-self: auto;
     }
-
     @include media.mobile {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-
+    @include media.mobile-l {
+      justify-self: baseline;
+      margin-bottom: 50px;
+    }
   }
 
   &__button {
@@ -114,6 +141,9 @@
         height: auto;
         background: transparent;
       }
+      @include media.mobile-l{
+        gap: 60px;
+      }
     }
 
     &-content {
@@ -123,6 +153,13 @@
       gap: 6px;
       font-size: 1rem;
 
+      @include media.tablet{
+        margin-right: 24px;
+      }
+      @include media.mobile-m {
+        margin-right: 0;
+      }
+
       &-text {
         text-transform: uppercase;
         font-weight: var(--font-weight-bold);
@@ -130,14 +167,21 @@
         line-height: 1em;
         font-size: 1.19rem;
 
-
         @include media.mobile-above-mode-max{
-          font-size: 22px;
+          font-size: 1.375rem;
           line-height: 22px;
         }
         @include media.mobile {
-          font-size: 22px;
+          font-size: 1.375rem;
           line-height: 22px;
+        }
+        @include media.mobile-l {
+          font-size: 1.5rem;
+          line-height: 21px;
+        }
+        @include media.mobile-m {
+          font-size: 1.188rem;
+          line-height: 16px;
         }
       }
 
@@ -146,10 +190,6 @@
         font-size: .62rem;
         font-weight: 500;
         color: var(--color-title);
-      }
-
-      @include media.tablet{
-        margin-right: 24px;
       }
     }
 
@@ -204,6 +244,14 @@
         line-height: .8em;
         margin-top: 6px;
       }
+      @include media.mobile-l{
+        max-width: 276px;
+        font-size: 18px;
+      }
+      @include media.mobile-m{
+        max-width: 224px;
+        margin-bottom: 9px;
+      }
     }
 
     &-text {
@@ -218,6 +266,14 @@
 
       @include media.tablet{
         font-size: 12px;
+      }
+      @include media.mobile-l{
+        font-size: 13px;
+      }
+      @include media.mobile-m{
+        font-size: 0.75rem;
+        line-height: 1.5em;
+        max-width: 249px;
       }
     }
   }
@@ -248,9 +304,27 @@
     z-index: -1;
   }
 
+
   &:hover:before {
     opacity: 1;
     transform: scale(1.01) translateZ(0);
     padding: 15px 13px 11px;
+  }
+
+  // Для мобильных устройств
+  @include media.mobile-s {
+    background-color: transparent;
+    transform: none;
+
+    &:hover,
+    &:hover:before {
+      transform: none;
+      color: #ca131a;
+      border: 1px solid #ca131a;
+    }
+
+    &:before {
+      display: none;
+    }
   }
 }
