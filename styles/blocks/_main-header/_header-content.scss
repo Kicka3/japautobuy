@@ -6,13 +6,16 @@
   overflow: hidden;
   box-sizing: border-box;
 
-  @include media.tablet{
+  @include media.tablet {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
   }
-
-  @include media.mobile {
+  @include media.mobile-l {
     display: block;
+  }
+  @include media.mobile-s {
+    margin-bottom: 0;
+    gap: 0;
   }
 
   &__title-wrapper {
@@ -25,6 +28,9 @@
     }
     @include media.mobile-m {
       margin: 21px 0 57px
+    }
+    @include media.mobile-s {
+      margin: 1px 0 49px;
     }
   }
 
@@ -40,8 +46,9 @@
     font-family: "new-BebasNeue-Bold", sans-serif;
     margin-bottom: 24px;
 
-    @include media.tablet{
+    @include media.tablet {
       font-size: 45px;
+      margin-bottom: 24px;
     }
     @include media.mobile-l {
       font-size: 3.125rem;
@@ -51,6 +58,9 @@
     }
     @include media.mobile-m {
       font-size: 2.813rem;
+    }
+    @include media.mobile-m {
+      font-size: 2.188rem;
     }
 
     &-sub {
@@ -62,16 +72,24 @@
       font-size: 38px;
       line-height: 53px;
 
-      @include media.tablet{
-        font-size: 2rem;
+      @include media.tablet {
+        font-size: 1.875rem;
         max-width: 292px;
         font-weight: 300;
-        line-height: 46px;
+        line-height: 42px;
       }
-
-      @include media.mobile-m{
+      @include media.mobile-l {
+        font-size: 2.063rem;
+        line-height: 47px;
+      }
+      @include media.mobile-m {
         font-size: 1.875rem;
         line-height: 38px;
+      }
+      @include media.mobile-s {
+        font-size: 22px;
+        line-height: 33px;
+        max-width: 190px;
       }
     }
 
@@ -82,7 +100,7 @@
       width: 400px;
       font-family: sans-serif;
 
-      @include media.tablet{
+      @include media.tablet {
         width: 292px;
       }
     }
@@ -98,7 +116,7 @@
     padding: 0 3px 0 4px;
     margin-top: -88px;
 
-    @include media.tablet{
+    @include media.tablet {
       border: none;
       padding: 0;
       margin-top: 10px;
@@ -107,11 +125,16 @@
     @include media.mobile {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 0;
     }
     @include media.mobile-l {
       justify-self: baseline;
       margin-bottom: 50px;
+      gap: 4px;
+    }
+    @include media.mobile-s {
+      gap: 0;
+      margin-bottom: 42px;
     }
   }
 
@@ -134,14 +157,14 @@
       transition: background 0.3s ease;
       border-radius: 8px;
 
-      @include media.tablet{
+      @include media.tablet {
         border: none;
         padding: 0;
         width: auto;
         height: auto;
         background: transparent;
       }
-      @include media.mobile-l{
+      @include media.mobile-l {
         gap: 60px;
       }
     }
@@ -153,7 +176,7 @@
       gap: 6px;
       font-size: 1rem;
 
-      @include media.tablet{
+      @include media.tablet {
         margin-right: 24px;
       }
       @include media.mobile-m {
@@ -167,7 +190,7 @@
         line-height: 1em;
         font-size: 1.19rem;
 
-        @include media.mobile-above-mode-max{
+        @include media.mobile-above-mode-max {
           font-size: 1.375rem;
           line-height: 22px;
         }
@@ -239,18 +262,23 @@
       border: none;
       margin-bottom: 16px;
 
-      @include media.tablet{
+      @include media.tablet {
         max-width: 292px;
         line-height: .8em;
         margin-top: 6px;
       }
-      @include media.mobile-l{
+      @include media.mobile-l {
         max-width: 276px;
         font-size: 18px;
       }
-      @include media.mobile-m{
+      @include media.mobile-m {
         max-width: 224px;
-        margin-bottom: 9px;
+        margin-bottom: 12px;
+      }
+      @include media.mobile-m {
+        max-width: 198px;
+        margin-bottom: 10px;
+        padding: 12px 24px;
       }
     }
 
@@ -264,13 +292,13 @@
       max-width: 276px;
       overflow: hidden;
 
-      @include media.tablet{
+      @include media.tablet {
         font-size: 12px;
       }
-      @include media.mobile-l{
+      @include media.mobile-l {
         font-size: 13px;
       }
-      @include media.mobile-m{
+      @include media.mobile-m {
         font-size: 0.75rem;
         line-height: 1.5em;
         max-width: 249px;
@@ -312,6 +340,51 @@
   }
 
   // Для мобильных устройств
+  @include media.tablet {
+    background-color: transparent;
+    transform: none;
+
+    &:hover,
+    &:hover:before {
+      transform: none;
+      color: #ca131a;
+      border: 1px solid #ca131a;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+  @include media.mobile-l {
+    background-color: transparent;
+    transform: none;
+
+    &:hover,
+    &:hover:before {
+      transform: none;
+      color: #ca131a;
+      border: 1px solid #ca131a;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+  @include media.mobile-m {
+    background-color: transparent;
+    transform: none;
+
+    &:hover,
+    &:hover:before {
+      transform: none;
+      color: #ca131a;
+      border: 1px solid #ca131a;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
   @include media.mobile-s {
     background-color: transparent;
     transform: none;

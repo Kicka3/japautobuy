@@ -11,18 +11,9 @@
     padding-bottom: 0;
     margin-bottom: 76px;
   }
-
-  @include media.mobile-above-mode-max {
-    margin-bottom: 15px;
-  }
-
-  @include media.mobile {
-    margin-bottom: 15px;
-  }
-
   @include media.mobile-l {
     padding-top: 18px;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
   }
 
   &__logo {
@@ -46,6 +37,10 @@
     @include media.mobile-m {
       margin-top: 18px;
       width: 80px;
+    }
+    @include media.mobile-s {
+      margin-top: 0;
+      width: 70px;
     }
 
     &-text {
@@ -104,6 +99,9 @@
       order: 2;
       width: 100%;
     }
+    @include media.mobile {
+      padding: 0;
+    }
 
     &-list {
       display: flex;
@@ -122,21 +120,22 @@
       }
 
       @include media.mobile {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        column-gap: 6px;
       }
     }
 
     &__social-list {
       display: flex;
-      padding-right: 10px;
+      padding: 0 10px;
       gap: 25px;
 
       @include media.mobile-l {
         margin-top: 28px;
       }
       @include media.mobile-s {
-        padding-right: 0;
-        gap: 10px;
+        padding: 0 10px;
+        margin: 0;
       }
     }
 
@@ -175,7 +174,7 @@
       flex-direction: row;
       overflow: hidden;
       background: var(--color-red-dark);
-      transition: all .15s linear;
+      transition: all .4s ease-in-out;
       list-style-type: none;
       box-sizing: border-box;
       justify-content: flex-start;
@@ -189,6 +188,13 @@
       visibility: hidden;
       top: -100%;
       opacity: 0;
+
+      @include media.tablet {
+        padding: 272px 46px 42px;
+      }
+      @include media.mobile {
+        margin-top: 0;
+      }
 
       &::before {
         content: "";
@@ -220,6 +226,13 @@
         &:nth-child(1) {
           padding-top: 6px;
         }
+
+        @include media.tablet {
+          padding-right: 33px;
+          margin-right: 40px;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
       }
 
       &-section:not(:last-child) {
@@ -236,6 +249,14 @@
 
       &-links {
         font-size: 1rem;
+
+        @include media.mobile {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          max-width: 160px;
+          word-break: break-all;
+          column-count: auto !important;
+        }
       }
 
       &-item {
@@ -245,6 +266,12 @@
         line-height: 1.2em;
         font-family: sans-serif;
         margin-bottom: 12px;
+
+        @include media.mobile {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          line-height: 2.2em;
+        }
       }
 
       &-link {
@@ -252,6 +279,10 @@
         font-size: 1.0625rem;
         font-weight: 500;
         line-height: 1em;
+
+        @include media.mobile {
+          font-size: 0.813rem;
+        }
       }
     }
 
@@ -304,8 +335,10 @@
 
         @include media.tablet {
           border-right: 1px solid hsla(0, 0%, 100%, .1);
-          border-left: 1px solid hsla(0, 0%, 100%, .1);
           display: flex;
+        }
+        @include media.mobile {
+          border-left: 1px solid hsla(0, 0%, 100%, .1);
         }
 
         &__counter {
@@ -417,6 +450,10 @@
     transform: translateY(0);
   }
 
+  & .header__menu__sublist {
+    padding: 40px 40px 54px;
+  }
+
   .container {
     @include media.tablet {
       flex-flow: row;
@@ -519,20 +556,45 @@
 }
 
 
-/* Слой для блюра */
+//Blur для всей страницы
 .header__overlay--blur {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(0);
+  opacity: 0;
+  transition: backdrop-filter 0.1s ease, opacity 0.1s ease;
   z-index: 5;
-  visibility: hidden;
   pointer-events: none;
 }
 
-.header__menu-item:hover ~ .header__overlay--blur {
-  visibility: visible;
+// Активное состояние блюра
+.header__overlay--blur.active {
+  backdrop-filter: blur(16px);
+  opacity: 1;
   pointer-events: auto;
+}
+
+
+/* Анимация для элементов подменю */
+.header__menu__sublist-item {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+
+/* Анимация для элементов подменю */
+.header__menu__sublist.visible .header__menu__sublist-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Задержка анимации для каждого элемента */
+@for $i from 1 through 20 {
+  .header__menu__sublist.visible .header__menu__sublist-item:nth-child(#{$i}) {
+    transition-delay: 0.05s * ($i - 1);
+  }
 }
