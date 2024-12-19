@@ -826,118 +826,173 @@
 </section>
 
 <!--форма-->
-<!--<main>-->
-<form class="form" action="#" method="GET">
-    <fieldset class="form__fieldset">
-        <legend class="form__legend">Фильтры</legend>
+<main>
+    <div class="form-filter__inner container">
+        <form class="form-filter" action="#" method="GET">
+            <!-- Табы -->
+            <div class="form-filter__tabs">
+                <button type="button" class="form-filter__tabs-btn">Авто из Японии</button>
+                <button type="button" class="form-filter__tabs-btn form-filter__tabs-btn--active">Авто из Китая</button>
+                <button type="button" class="form-filter__tabs-btn">Авто из Кореи</button>
+                <button type="button" class="form-filter__tabs-btn">Европейские авто</button>
+            </div>
 
-        <!-- Марка -->
-        <div class="form__row">
-            <label class="form__label">
-                <span class="form__label-text">Марка</span>
-                <select class="form__select" name="brand">
-                    <option value="">Выберите марку</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="honda">Honda</option>
-                    <option value="ford">Ford</option>
-                    <option value="chevrolet">Chevrolet</option>
-                    <option value="lexus">Lexus</option>
-                    <option value="nissan">Nissan</option>
-                </select>
-            </label>
+            <fieldset class="form-filter__fieldset">
+                <legend class="form-filter__legend visually-hidden">Фильтры</legend>
+                <div class="form-filter__content">
+                    <!-- 1 колонка -->
+                    <div class="form-filter__content__column form-filter__content__column--0">
+                        <div class="form-filter-select">
+                            <select class="form-filter__select" id="marka_name-filter-main" name="brand">
+                                <option value="">Выберите марку</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="bmw">BMW</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                                <option value="volkswagen">Volkswagen</option>
+                                <option value="honda">Honda</option>
+                                <option value="ford">Ford</option>
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="lexus">Lexus</option>
+                                <option value="nissan">Nissan</option>
+                            </select>
+                        </div>
 
-            <!-- Годы -->
-            <label class="form__label">
-                <span class="form__label-text">Год от</span>
-                <select class="form__select" name="year_from">
-                    <option value="">Год от</option>
-                    <!-- Скрипт добавляет значения -->
-                </select>
-            </label>
+                        <div class="form-filter-select">
+                            <!--                            Сделать множественный выбор   multiple-->
+                            <select class="form-filter__select" id="model_name-filter-main" name="model">
+                                <option value="">Выберите модель</option>
+                                <option value="camry">Toyota Camry</option>
+                                <option value="rav4">Toyota RAV4</option>
+                                <option value="x5">BMW X5</option>
+                                <option value="a6">Audi A6</option>
+                                <option value="g-class">Mercedes G-Class</option>
+                            </select>
+                        </div>
 
-            <label class="form__label">
-                <span class="form__label-text">Год до</span>
-                <select class="form__select" name="year_to">
-                    <option value="">Год до</option>
-                    <!-- Скрипт добавляет значения -->
-                </select>
-            </label>
+                        <div class="form-filter-select">
+                            <select class="form-filter__select form-filter__select--body" id="kuzov-filter-main"
+                                    name="body_type">
+                                <option value="">Выберите кузов</option>
+                                <option value="sedan">Седан</option>
+                                <option value="suv">Кроссовер</option>
+                                <option value="coupe">Купе</option>
+                                <option value="hatchback">Хэтчбек</option>
+                            </select>
+                        </div>
+                    </div>
 
-            <!-- КПП -->
-            <label class="form__label">
-                <span class="form__label-text">КПП</span>
-                <select class="form__select" name="transmission">
-                    <option value="">КПП</option>
-                    <option value="at">АТ</option>
-                    <option value="mt">МТ</option>
-                </select>
-            </label>
+                    <!-- 2 колонка -->
+                    <div class="form-filter__content__column form-filter__content__column--1">
+                        <div class="form-filter-select form-filter-select--shown">
+                            <select class="form-filter__select" id="year_min-filter-main" name="volume_from">
+                                <option value="">Год от</option>
+                                <option value="sedan">2014</option>
+                                <option value="suv">22222</option>
+                                <option value="coupe">2013</option>
+                                <option value="hatchback">2021</option>
+                            </select>
+                            <!--                            <span class="form-filter__label-text">Год от</span>-->
+                        </div>
 
-            <!-- Привод -->
-            <label class="form__label">
-                <span class="form__label-text">Привод</span>
-                <select class="form__select" name="drive">
-                    <option value="">Привод</option>
-                    <option value="fr">FR</option>
-                    <option value="ff">FF</option>
-                    <option value="4wd">4WD</option>
-                </select>
-            </label>
-        </div>
+                        <div class="form-filter-select form-filter-select--shown">
+                            <!--                            <span class="form-filter__label-text">Год до</span>-->
+                            <select class="form-filter__select" id="year_max-filter-main" name="volume_to">
+                                <option value="">Год от</option>
+                                <option value="sedan">2014</option>
+                                <option value="suv">22222</option>
+                                <option value="coupe">2013</option>
+                                <option value="hatchback">2021</option>
+                            </select>
+                        </div>
 
-        <!-- Модели и кузов -->
-        <div class="form__row">
-            <label class="form__label">
-                <span class="form__label-text">Модель</span>
-                <select class="form__select" name="model" multiple>
-                    <option value="">Выберите модель</option>
-                    <option value="camry">Toyota Camry</option>
-                    <option value="rav4">Toyota RAV4</option>
-                    <option value="x5">BMW X5</option>
-                    <option value="a6">Audi A6</option>
-                    <option value="g-class">Mercedes G-Class</option>
-                </select>
-            </label>
+                        <div class="form-filter-input form-filter-input--shown">
+                            <input class="form-filter__input form-filter__input--shown" type="number" name="volume_from"
+                                   placeholder="Объем от"/>
+                            <span class="form-filter__input__label" id="eng_v_min-filter-main">Объем от</span>
+                        </div>
 
-            <label class="form__label">
-                <span class="form__label-text">Кузов</span>
-                <select class="form__select form__select--body" name="body_type">
-                    <option value="">Выберите кузов</option>
-                    <option value="sedan">Седан</option>
-                    <option value="suv">Кроссовер</option>
-                    <option value="coupe">Купе</option>
-                    <option value="hatchback">Хэтчбек</option>
-                </select>
-            </label>
-        </div>
+                        <div class="form-filter-input form-filter-input--shown">
+                            <!--                            <span class="form-filter__label-text">Объем до</span>-->
+                            <input class="form-filter__input" id="eng_v_max-filter-main" type="number" name="volume_to"
+                                   placeholder="Объем до"/>
+                        </div>
 
-        <!-- Цвет -->
-        <div class="form__row">
-            <label class="form__label">
-                <span class="form__label-text">Цвет</span>
-                <select class="form__select form__select--color" name="color">
-                    <option value="">Цвет</option>
-                    <option value="white" class="form__color-option">Белый</option>
-                    <option value="black" class="form__color-option">Черный</option>
-                    <option value="red" class="form__color-option">Красный</option>
-                    <option value="blue" class="form__color-option">Синий</option>
-                    <option value="green" class="form__color-option">Зеленый</option>
-                </select>
-            </label>
-        </div>
-    </fieldset>
+                        <div class="form-filter-input form-filter-input--shown">
+                            <!--                            <span class="form-filter__label-text">Пробег от</span>-->
+                            <input class="form-filter__input" id="mileage_min-filter-main" type="number"
+                                   name="mileage_from"
+                                   placeholder="Пробег от"/>
+                        </div>
 
-    <!-- Кнопки -->
-    <div class="form__buttons">
-        <button type="reset" class="form__button form__button--reset">Сбросить</button>
-        <button type="submit" class="form__button form__button--submit">Показать автомобили</button>
+                        <div class="form-filter-input form-filter-input--shown">
+                            <!--                            <span class="form-filter__label-text">Пробег до</span>-->
+                            <input class="form-filter__input" id="mileage_max-filter-main" type="number"
+                                   name="mileage_to" placeholder="Пробег до"/>
+                        </div>
+                    </div>
+
+                    <!-- 3 колонка -->
+                    <div class="form-filter__content__column form-filter__content__column--2">
+                        <div class="form-filter-select">
+                            <!--                            <span class="form-filter__label-text">КПП</span>-->
+                            <select class="form-filter__select" id="kpp_type-filter-main" name="transmission">
+                                <option value="">КПП</option>
+                                <option value="at">АТ</option>
+                                <option value="mt">МТ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-filter-select">
+                            <!--                            <span class="form-filter__label-text">Привод</span>-->
+                            <select class="form-filter__select" id="priv_incl_like-filter-main" name="drive">
+                                <option value="">Привод</option>
+                                <option value="fr">FR</option>
+                                <option value="ff">FF</option>
+                                <option value="4wd">4WD</option>
+                            </select>
+                        </div>
+
+                        <div class="form-filter__row">
+                            <div class="form-filter-select">
+                                <!--                                <span class="form-filter__label-text">Цвет</span>-->
+                                <select class="form-filter__select form-filter__select--color" id="color-filter-main"
+                                        name="color">
+                                    <option value="">Цвет</option>
+                                    <option value="white" class="form-filter__color-option">Белый</option>
+                                    <option value="black" class="form-filter__color-option">Черный</option>
+                                    <option value="red" class="form-filter__color-option">Красный</option>
+                                    <option value="blue" class="form-filter__color-option">Синий</option>
+                                    <option value="green" class="form-filter__color-option">Зеленый</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                           <span class="form-filter__label-text">Лот</span>-->
+                    <!-- 4 колонка -->
+                    <div class="form-filter__content__column form-filter__content__column--3">
+                        <div class="form-filter-input">
+                            <!--                            <label for="lot-filter-main" class="form-filter__label">Лот</label>-->
+                            <input class="form-filter__input" type="text" id="lot-filter-main" name="lot"
+                                   placeholder="Лот"/>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Кнопки -->
+            <div class="form-filter__buttons-action">
+                <button type="reset" class="form-filter__button form-filter__button--reset">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.2971 12.4518L19.2998 12.4318V12.3444C19.2998 11.9892 19.0118 11.7012 18.6566 11.7012H18.5378C18.2338 11.7012 18.0686 11.9444 18.0431 12.1618C18.0348 12.2318 18.031 12.2601 18.0287 12.2768L18.0274 12.2862C18.0242 12.3105 18.0233 12.3271 18.0218 12.3531L18.0209 12.3681C17.999 12.743 17.9415 13.1135 17.8495 13.4797C17.0248 16.7589 13.631 18.7254 10.3745 17.8112C7.20953 16.9224 5.3253 13.6378 6.16347 10.4783C6.8961 7.71756 9.41299 5.85733 12.2638 5.97627C13.6797 6.03559 14.9263 6.52316 15.9695 7.47156C16.3663 7.83222 16.7305 8.21789 17.1036 8.61308L17.1859 8.70021H16.008C15.6575 8.70021 15.3735 8.9843 15.3735 9.33473C15.3735 9.68609 15.6592 9.96926 16.0088 9.96926L16.6346 9.96922C17.2172 9.96916 17.7549 9.9691 18.3845 9.96957C18.8848 9.97033 19.2995 9.56971 19.2995 9.06191V6.66919C19.2995 6.32167 19.0178 6.03996 18.6702 6.03996C18.3227 6.03996 18.041 6.32167 18.041 6.66919V7.76655C17.7119 7.41881 17.0361 6.75272 16.7394 6.46314C15.6397 5.48121 14.3314 4.9298 12.8765 4.75457C12.7882 4.74392 12.7015 4.73235 12.6127 4.72051L12.4767 4.70251L12.4574 4.7H11.5648L11.5395 4.70434C11.5169 4.70823 11.4979 4.71168 11.4806 4.71483C11.4522 4.71999 11.4284 4.72432 11.4007 4.72839C11.3175 4.74035 11.2284 4.7514 11.1362 4.76284C10.9272 4.78877 10.7016 4.81676 10.49 4.86208C8.86328 5.21113 7.49169 6.02012 6.4269 7.30226C4.92686 9.10838 4.40161 11.1964 4.86129 13.4964C5.18959 15.1383 6.02447 16.5059 7.30238 17.5781C8.87337 18.896 10.7038 19.4562 12.7398 19.2627C14.1867 19.1253 15.4839 18.5811 16.6054 17.6569C17.9971 16.51 18.8669 15.0406 19.1862 13.2596C19.2197 13.0724 19.2438 12.8774 19.2665 12.6924C19.2767 12.6096 19.2867 12.5289 19.2971 12.4518Z" fill="currentColor"/>
+                    </svg>
+                    <span>Сбросить</span>
+                </button>
+                <a type="submit" class="form-filter__button form-filter__button--submit">Показать автомобили</a>
+            </div>
+        </form>
     </div>
-</form>
-<!--</main>-->
+</main>
 
 
 <!--Зафиксированный хедер при скролле-->
@@ -1571,9 +1626,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1595,9 +1651,9 @@
                                         <defs></defs>
                                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <g id="Dribbble-Light-Preview"
-                                               transform="translate(-425.000000, -6679.000000)"
+                                               transform-filter="translate(-425.000000, -6679.000000)"
                                                fill="#000000">
-                                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                                     <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                           id="arrow_right-[#333]"></path>
                                                 </g>
@@ -1619,9 +1675,9 @@
                                         <defs></defs>
                                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <g id="Dribbble-Light-Preview"
-                                               transform="translate(-425.000000, -6679.000000)"
+                                               transform-filter="translate(-425.000000, -6679.000000)"
                                                fill="#000000">
-                                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                                     <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                           id="arrow_right-[#333]"></path>
                                                 </g>
@@ -1643,9 +1699,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1665,9 +1722,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1687,9 +1745,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1709,9 +1768,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1731,9 +1791,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filter="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
@@ -1753,9 +1814,10 @@
                             <g id="SVGRepo_iconCarrier"><title>arrow_right</title>
                                 <defs></defs>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Dribbble-Light-Preview" transform="translate(-425.000000, -6679.000000)"
+                                    <g id="Dribbble-Light-Preview"
+                                       transform-filter="translate(-425.000000, -6679.000000)"
                                        fill="#000000">
-                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <g id="icons" transform-filterZ="translate(56.000000, 160.000000)">
                                             <path d="M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519"
                                                   id="arrow_right-[#333]"></path>
                                         </g>
