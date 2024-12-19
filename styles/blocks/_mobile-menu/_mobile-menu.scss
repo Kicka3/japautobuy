@@ -19,6 +19,7 @@
     list-style: none;
     gap: 20px;
     align-items: flex-end;
+    justify-content: space-around;
 
     @include media.mobile-m{
       gap: 9px;
@@ -92,11 +93,4 @@
 
 .mobile__menu-item.active .mobile__menu-text {
   color: #fff; /* Цвет текста для активного элемента */
-}
-
-/* Добавим медиазапрос для активации мобильного меню */
-@media (max-width: 768px) {
-  .mobile-menu {
-    display: flex;
-  }
 }

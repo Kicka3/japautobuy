@@ -1,7 +1,0 @@
-@use "../../mixins" as mixin;
-
-.burger-button {
-  background-color: red;
-  @include mixin.reset-button;
-
-}

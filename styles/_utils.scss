@@ -16,6 +16,9 @@
   @include media.mobile-l {
     max-width: var(--container-xs);
   }
+  @include media.mobile-s {
+    padding-bottom: 92px;
+  }
 }
 
 .visually-hidden {
@@ -31,24 +34,23 @@
   overflow: hidden !important;
 }
 
-.hidden-mobile {
-  @include media.mobile-above {
-    display: none !important;
-  }
-}
-
 .hidden-mobile-l {
   @include media.mobile-l {
     display: none !important;
   }
 }
 
-.hidden-mobile-l-above {
-  @include media.mobile-l-above {
+.hidden-mobile-s {
+  @include media.mobile-s {
     display: none !important;
   }
 }
 
+.hidden-mobile-below {
+  @include media.mobile-below {
+    display: none !important;
+  }
+}
 
 .hidden-tablet {
   @include media.tablet-above {
