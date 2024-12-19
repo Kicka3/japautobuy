@@ -282,7 +282,7 @@
 
         @include media.mobile {
           font-size: 0.813rem;
-      }
+        }
       }
     }
 
@@ -335,7 +335,6 @@
 
         @include media.tablet {
           border-right: 1px solid hsla(0, 0%, 100%, .1);
-          //border-left: 1px solid hsla(0, 0%, 100%, .1);
           display: flex;
         }
         @include media.mobile {
@@ -451,6 +450,10 @@
     transform: translateY(0);
   }
 
+  & .header__menu__sublist {
+    padding: 40px 40px 54px;
+  }
+
   .container {
     @include media.tablet {
       flex-flow: row;
@@ -552,6 +555,7 @@
   }
 }
 
+
 //Blur для всей страницы
 .header__overlay--blur {
   position: fixed;
@@ -565,6 +569,7 @@
   z-index: 5;
   pointer-events: none;
 }
+
 // Активное состояние блюра
 .header__overlay--blur.active {
   backdrop-filter: blur(16px);
@@ -576,8 +581,8 @@
 /* Анимация для элементов подменю */
 .header__menu__sublist-item {
   opacity: 0;
-  transform: translate3d(0, 50px, 0);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 
@@ -586,9 +591,10 @@
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
+
 /* Задержка анимации для каждого элемента */
 @for $i from 1 through 20 {
   .header__menu__sublist.visible .header__menu__sublist-item:nth-child(#{$i}) {
-    transition-delay: 0.1s * ($i - 1);
+    transition-delay: 0.05s * ($i - 1);
   }
 }

@@ -827,116 +827,116 @@
 
 <!--форма-->
 <!--<main>-->
-    <form class="form" action="#" method="GET">
-        <fieldset class="form__fieldset">
-            <legend class="form__legend">Фильтры</legend>
+<form class="form" action="#" method="GET">
+    <fieldset class="form__fieldset">
+        <legend class="form__legend">Фильтры</legend>
 
-            <!-- Марка -->
-            <div class="form__row">
-                <label class="form__label">
-                    <span class="form__label-text">Марка</span>
-                    <select class="form__select" name="brand">
-                        <option value="">Выберите марку</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="bmw">BMW</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="honda">Honda</option>
-                        <option value="ford">Ford</option>
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="lexus">Lexus</option>
-                        <option value="nissan">Nissan</option>
-                    </select>
-                </label>
+        <!-- Марка -->
+        <div class="form__row">
+            <label class="form__label">
+                <span class="form__label-text">Марка</span>
+                <select class="form__select" name="brand">
+                    <option value="">Выберите марку</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="honda">Honda</option>
+                    <option value="ford">Ford</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="lexus">Lexus</option>
+                    <option value="nissan">Nissan</option>
+                </select>
+            </label>
 
-                <!-- Годы -->
-                <label class="form__label">
-                    <span class="form__label-text">Год от</span>
-                    <select class="form__select" name="year_from">
-                        <option value="">Год от</option>
-                        <!-- Скрипт добавляет значения -->
-                    </select>
-                </label>
+            <!-- Годы -->
+            <label class="form__label">
+                <span class="form__label-text">Год от</span>
+                <select class="form__select" name="year_from">
+                    <option value="">Год от</option>
+                    <!-- Скрипт добавляет значения -->
+                </select>
+            </label>
 
-                <label class="form__label">
-                    <span class="form__label-text">Год до</span>
-                    <select class="form__select" name="year_to">
-                        <option value="">Год до</option>
-                        <!-- Скрипт добавляет значения -->
-                    </select>
-                </label>
+            <label class="form__label">
+                <span class="form__label-text">Год до</span>
+                <select class="form__select" name="year_to">
+                    <option value="">Год до</option>
+                    <!-- Скрипт добавляет значения -->
+                </select>
+            </label>
 
-                <!-- КПП -->
-                <label class="form__label">
-                    <span class="form__label-text">КПП</span>
-                    <select class="form__select" name="transmission">
-                        <option value="">КПП</option>
-                        <option value="at">АТ</option>
-                        <option value="mt">МТ</option>
-                    </select>
-                </label>
+            <!-- КПП -->
+            <label class="form__label">
+                <span class="form__label-text">КПП</span>
+                <select class="form__select" name="transmission">
+                    <option value="">КПП</option>
+                    <option value="at">АТ</option>
+                    <option value="mt">МТ</option>
+                </select>
+            </label>
 
-                <!-- Привод -->
-                <label class="form__label">
-                    <span class="form__label-text">Привод</span>
-                    <select class="form__select" name="drive">
-                        <option value="">Привод</option>
-                        <option value="fr">FR</option>
-                        <option value="ff">FF</option>
-                        <option value="4wd">4WD</option>
-                    </select>
-                </label>
-            </div>
-
-            <!-- Модели и кузов -->
-            <div class="form__row">
-                <label class="form__label">
-                    <span class="form__label-text">Модель</span>
-                    <select class="form__select" name="model" multiple>
-                        <option value="">Выберите модель</option>
-                        <option value="camry">Toyota Camry</option>
-                        <option value="rav4">Toyota RAV4</option>
-                        <option value="x5">BMW X5</option>
-                        <option value="a6">Audi A6</option>
-                        <option value="g-class">Mercedes G-Class</option>
-                    </select>
-                </label>
-
-                <label class="form__label">
-                    <span class="form__label-text">Кузов</span>
-                    <select class="form__select form__select--body" name="body_type">
-                        <option value="">Выберите кузов</option>
-                        <option value="sedan">Седан</option>
-                        <option value="suv">Кроссовер</option>
-                        <option value="coupe">Купе</option>
-                        <option value="hatchback">Хэтчбек</option>
-                    </select>
-                </label>
-            </div>
-
-            <!-- Цвет -->
-            <div class="form__row">
-                <label class="form__label">
-                    <span class="form__label-text">Цвет</span>
-                    <select class="form__select form__select--color" name="color">
-                        <option value="">Цвет</option>
-                        <option value="white" class="form__color-option">Белый</option>
-                        <option value="black" class="form__color-option">Черный</option>
-                        <option value="red" class="form__color-option">Красный</option>
-                        <option value="blue" class="form__color-option">Синий</option>
-                        <option value="green" class="form__color-option">Зеленый</option>
-                    </select>
-                </label>
-            </div>
-        </fieldset>
-
-        <!-- Кнопки -->
-        <div class="form__buttons">
-            <button type="reset" class="form__button form__button--reset">Сбросить</button>
-            <button type="submit" class="form__button form__button--submit">Показать автомобили</button>
+            <!-- Привод -->
+            <label class="form__label">
+                <span class="form__label-text">Привод</span>
+                <select class="form__select" name="drive">
+                    <option value="">Привод</option>
+                    <option value="fr">FR</option>
+                    <option value="ff">FF</option>
+                    <option value="4wd">4WD</option>
+                </select>
+            </label>
         </div>
-    </form>
+
+        <!-- Модели и кузов -->
+        <div class="form__row">
+            <label class="form__label">
+                <span class="form__label-text">Модель</span>
+                <select class="form__select" name="model" multiple>
+                    <option value="">Выберите модель</option>
+                    <option value="camry">Toyota Camry</option>
+                    <option value="rav4">Toyota RAV4</option>
+                    <option value="x5">BMW X5</option>
+                    <option value="a6">Audi A6</option>
+                    <option value="g-class">Mercedes G-Class</option>
+                </select>
+            </label>
+
+            <label class="form__label">
+                <span class="form__label-text">Кузов</span>
+                <select class="form__select form__select--body" name="body_type">
+                    <option value="">Выберите кузов</option>
+                    <option value="sedan">Седан</option>
+                    <option value="suv">Кроссовер</option>
+                    <option value="coupe">Купе</option>
+                    <option value="hatchback">Хэтчбек</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Цвет -->
+        <div class="form__row">
+            <label class="form__label">
+                <span class="form__label-text">Цвет</span>
+                <select class="form__select form__select--color" name="color">
+                    <option value="">Цвет</option>
+                    <option value="white" class="form__color-option">Белый</option>
+                    <option value="black" class="form__color-option">Черный</option>
+                    <option value="red" class="form__color-option">Красный</option>
+                    <option value="blue" class="form__color-option">Синий</option>
+                    <option value="green" class="form__color-option">Зеленый</option>
+                </select>
+            </label>
+        </div>
+    </fieldset>
+
+    <!-- Кнопки -->
+    <div class="form__buttons">
+        <button type="reset" class="form__button form__button--reset">Сбросить</button>
+        <button type="submit" class="form__button form__button--submit">Показать автомобили</button>
+    </div>
+</form>
 <!--</main>-->
 
 
@@ -954,9 +954,8 @@
         </a>
         <nav class="header__menu">
             <ul class="header__menu-list">
-                <li class="header__menu-item">
+                <li class="header__menu-item header__menu-item--blur">
                     <a href="/" class="header__menu-link">АВТО ИЗ ЯПОНИИ</a>
-
                     <!-- Подменю -->
                     <ul class="header__menu__sublist">
                         <li class="header__menu__sublist-section">
@@ -1077,7 +1076,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="header__menu-item">
+                <li class="header__menu-item header__menu-item--blur">
                     <a href="/" class="header__menu-link">
                         АВТО ИЗ КИТАЯ
                     </a>
@@ -1153,7 +1152,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="header__menu-item">
+                <li class="header__menu-item header__menu-item--blur">
                     <a href="/" class="header__menu-link">
                         АВТО ИЗ КОРЕИ
                     </a>
@@ -1271,12 +1270,123 @@
                         </li>
                     </ul>
                 </li>
-                <li class="header__menu-item">
+                <li class="header__menu-item header__menu-item--blur">
                     <a href="/" class="header__menu-link">
-                        <div class="header__services">
-                            <div class="header__services-title">Европейские авто</div>
-                        </div>
+                        Европейские авто
                     </a>
+                    <!-- Подменю -->
+                    <ul class="header__menu__sublist">
+                        <li class="header__menu__sublist-section">
+                            <span class="header__menu__sublist-title">Популярные модели</span>
+                            <ul class="header__menu__sublist-links" style="column-count:2;">
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Hyundai Tucson</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Hyundai Santa Fe</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">KIA K5</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">KIA Sorento</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">KIA Sporage</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">BMW 5-Series G30</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">Audi Q5</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">Genesis GV80</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="menu__sublist-link">Genesis GV70</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="header__menu__sublist-section">
+                            <span class="header__menu__sublist-title">Корейские</span>
+                            <ul class="header__menu__sublist-links">
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">KIA</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Genesis</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Hyundai</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">SsangYong</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="header__menu__sublist-section">
+                            <span class="header__menu__sublist-title">Европейские</span>
+                            <ul class="header__menu__sublist-links" style="column-count:2;">
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">BMW</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Audi</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Volvo</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Jaguar</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Porsche</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Land Rover</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Volkswagen</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Mercedes-Benz</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="header__menu__sublist-section">
+                            <span class="header__menu__sublist-title">Американские</span>
+                            <ul class="header__menu__sublist-links" style="column-count:2;">
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Ford</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Jeep</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Tesla</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Dodge</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Cadillac</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Chrysler</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Hummer</a>
+                                </li>
+                                <li class="header__menu__sublist-item">
+                                    <a href="/" class="header__menu__sublist-link">Chevrolet</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li class="header__menu-item hidden-tablet-below">
                     <a href="/" class="header__menu-link">
