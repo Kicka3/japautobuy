@@ -1,63 +1,509 @@
-.form {
+@use '../../mixins' as mixin;
+@use '../../media' as media;
+@use '../../animations' as *;
+@use '../../variables' as *;
+
+.form-filter {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.form__row {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
+  margin-bottom: 88px;
+  //padding: 32px 15px;
+  padding: 15px 0;
+  flex-direction: column;
+  position: relative;
 
-.form__select,
-.form__input {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
+  &:before {
+    background: linear-gradient(180deg, #f7f7f7, #fff);
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 -40px 40px rgba(0, 0, 0, 0.12);
+    content: "";
+    height: 254px;
+    position: absolute;
+    top: -32px;
+    z-index: 0;
+    width: 100vw;
+    right: -6px;
 
-.form__select {
-  appearance: none;
-  background-color: #f9f9f9;
-}
+    @include media.desktop-l {
+      right: -80px;
+    }
+    @include media.tablet {
+      top: -49px;
+      right: -24px;
+    }
+    @include media.mobile-l {
+      top: -47px;
+      right: -17px;
+    }
+    @include media.mobile-m {
+      top: -32px;
+    }
+  }
 
-.form__buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
+  &__tabs {
+    &-wrapper {
+      display: flex;
+      margin-bottom: 40px;
+      gap: 8px;
+      justify-content: flex-end;
+      row-gap: 24px;
+      flex-direction: column;
+      z-index: 1;
 
-.form__button {
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 4px;
-  cursor: pointer;
-  border: none;
-}
+      @include media.tablet {
+        margin-bottom: 0;
+      }
+      @include media.mobile-l {
+        row-gap: 28px;
+      }
+    }
 
-.form__button--reset {
-  background-color: #f5f5f5;
-  color: #333;
-}
+    &-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 1;
 
-.form__button--reset:hover {
-  background-color: #ddd;
-}
+      &__text {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-family: new-BebasNeue-Bold, sans-serif;
+        font-size: calc(45px * 0.67);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.3em;
+        row-gap: 0;
+        color: var(--color-title);
+        width: auto;
+        z-index: 1;
 
-.form__button--submit {
-  background-color: #e60000;
-  color: #fff;
-}
+        @include media.mobile-l {
+          font-size: 2.063rem;
+          line-height: 48px;
+        }
+        @include media.mobile-m {
+          font-size: 1.875rem;
+          line-height: 2.5rem;
+        }
+      }
 
-.form__button--submit:hover {
-  background-color: #cc0000;
+      &__subtitle {
+        font-family: new-BebasNeue-Bold, sans-serif;
+        font-size: 20px;
+        font-weight: var(--font-weight-light);
+        line-height: 21px;
+        color: var(--color-text);
+
+        @include media.mobile-l {
+          font-size: 1.375rem;
+        }
+        @include media.mobile-m {
+          font-size: 1.25rem;
+        }
+      }
+
+      @include media.mobile-l {
+        align-items: flex-start;
+      }
+    }
+
+    &-content {
+      display: flex;
+      margin-bottom: 40px;
+      gap: 8px;
+      justify-content: flex-end;
+      row-gap: 24px;
+      z-index: 1;
+
+      @include media.tablet {
+        margin-bottom: 35px;
+      }
+      @include media.mobile-l {
+        column-gap: 8px;
+        flex-flow: row wrap;
+        row-gap: 8px;
+        justify-content: flex-start;
+      }
+
+      &__btn {
+        @include mixin.reset-button;
+        padding: 14px 24px 10px 24px;
+        border: 1px solid #ccc9ce;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: var(--font-weight-regular);
+        line-height: 1em;
+        color: var(--color-text);
+        background-color: transparent;
+        font-family: new-BebasNeue-Regular, sans-serif;
+        text-transform: uppercase;
+
+        &--active {
+          border-color: red;
+          color: red;
+        }
+
+        @include media.mobile-l {
+          padding: 10px 23px 10px 22px;
+        }
+      }
+    }
+  }
+
+  &__fieldset {
+    z-index: 1;
+    margin-bottom: 40px;
+
+    @include media.tablet {
+      margin-bottom: 32px;
+    }
+    @include media.mobile-l {
+      margin-bottom: 34px;
+    }
+    @include media.mobile-m {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    -moz-column-gap: 0;
+    column-gap: 40px;
+    row-gap: 40px;
+    z-index: 1;
+    column-count: 4;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+
+    &__column {
+      display: flex;
+      width: 100%;
+      row-gap: 16px;
+      flex-flow: row wrap;
+      column-gap: 16px;
+      align-self: flex-start;
+      column-count: 2;
+      max-width: calc((100% - 40px) * (4 - 1) / 4);
+      flex-direction: column;
+      gap: 16px;
+      flex: 1 1 calc(25% - 24px);
+
+      &--0 {
+        @include media.tablet {
+          max-width: none;
+        }
+      }
+
+      &--1 {
+        column-count: 2;
+        flex-flow: row wrap;
+      }
+
+      @include media.tablet {
+        column-count: 3;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      @include media.mobile-l {
+        flex-direction: column;
+        flex-wrap: wrap;
+        column-count: 1;
+        gap: 8px;
+      }
+    }
+  }
+
+  &__select {
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../../../images/svg/arrow-down.svg") calc(100% - 16px) / 12px no-repeat #fff;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    color: #23242b;
+    cursor: pointer;
+    font-family: "roboto", sans-serif;
+    font-size: .8125rem;
+    height: 48px;
+    line-height: .9375rem;
+    padding-left: 16px;
+    transition: all .15s ease-in-out;
+    width: 100%;
+
+    &--shown {
+      max-width: calc((100% - 16px) * (2 - 1) / 2);
+    }
+
+    &.form-filter__select:hover,
+    &.form-filter__select:focus {
+      background: url("../../../images/svg/arrow-down-red.svg") calc(100% - 16px) / 12px no-repeat #fff;
+      border: 1px solid var(--color-red);
+      color: var(--color-red);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+      outline: none;
+    }
+
+  }
+
+  &-select {
+    &--shown {
+      width: 126px;
+      max-width: calc((100% - 16px) * (2 - 1) / 2);
+    }
+
+    @include media.tablet {
+      width: calc((100% - 8px * (3 - 1)) / 3);
+    }
+    @include media.mobile-l {
+      width: 100%;
+    }
+  }
+
+  &-input {
+    &--shown {
+      max-width: calc((100% - 16px) * (2 - 1) / 2);
+      position: relative;
+    }
+  }
+
+  &__input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 0.875rem;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    color: #23242b;
+    font-family: "roboto", sans-serif;
+    font-weight: 700;
+    height: 48px;
+    line-height: 0.9375rem;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    width: 100%;
+    position: relative;
+
+    // Убираем стрелки в Chrome, Safari и Edge
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    // Убираем стрелки в Firefox
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--color-focus, #000); /* Цвет границы */
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Тень */
+    }
+
+    &:focus-visible {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: #666;
+      outline: none;
+    }
+
+    // Обновляем стили лейбла для focus и hover
+    &:hover + .form-filter__input__label,
+    &:focus + .form-filter__input__label,
+    &:focus-visible + .form-filter__input__label {
+      color: var(--color-text);
+      top: 0;
+      background-color: var(--background-color, #fff);
+    }
+
+    &:hover + .lot-label,
+    &:focus + .lot-label,
+    &:focus-visible + .lot-label {
+      color: var(--color-text);
+      top: 33.4%;
+    }
+
+    & .-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
+  &__input__label {
+    color: #23242b;
+    font-family: "roboto", sans-serif;
+    font-size: 0.875rem;
+    left: 16px;
+    padding-left: 7px;
+    padding-right: 16px;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    background: #fff;
+    pointer-events: none;
+    transform: translate3d(0, -50%, 0);
+    transition: all .15s ease-in-out;
+
+    &.lot-label {
+      left: 77.5%;
+      top: 38.4%;
+      position: absolute;
+      font-size: 0.875rem;
+      color: #23242b;
+      transform: translate3d(0, -50%, 0);
+      transition: all .15s ease-in-out;
+      background: #fff;
+      padding: 0 8px;
+
+      &:hover,
+      &:focus {
+        color: var(--color-text);
+        top: 116px;
+      }
+    }
+  }
+
+  &__buttons-action {
+    align-items: center;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
+    display: flex;
+    z-index: 1;
+    justify-content: flex-end;
+
+    @include media.mobile-l {
+      column-gap: 8px;
+    }
+    @include media.mobile-m {
+      column-gap: 6px;
+    }
+  }
+
+  &__button {
+    @include mixin.reset-button;
+    @include mixin.reset-link;
+
+    &--params {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 23px 11px 12px;
+      background: hsla(0, 0%, 100%, 0);
+      border: 1px solid #ccc9ce;
+      border-radius: 10px;
+
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      @include media.hover {
+        border: 1px solid var(--color-red);
+        color: var(--color-red);
+
+        & > span {
+          color: var(--color-red);
+        }
+      }
+      @include media.tablet {
+        padding: 10px 15px 11px 9px;
+      }
+      @include media.mobile-l {
+        & span {
+          display: none;
+        }
+        padding: 10px;
+      }
+      @include media.mobile-s {
+        padding: 10px 6px;
+      }
+    }
+
+    &--reset {
+      column-gap: 16px;
+      flex: 0 0 auto;
+      width: auto;
+      border: 1px solid #ccc9ce;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 23px 11px 12px;
+      border-radius: 10px;
+      margin-left: auto;
+
+      & span {
+        display: block;
+        font-family: sans-serif;
+        font-size: 12px;
+        order: 1;
+        color: var(--color-title);
+        font-weight: 700;
+        line-height: 1em;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 1;
+      }
+
+      @include media.hover {
+        border: 1px solid var(--color-red);
+        color: var(--color-red);
+
+        & > span {
+          color: var(--color-red);
+        }
+      }
+      @include media.tablet {
+        padding: 10px 16px;
+      }
+      @include media.mobile-l {
+        & span {
+          display: none;
+        }
+        margin-left: 0;
+        padding: 10px;
+      }
+      @include media.mobile-s {
+        padding: 10px 6px;
+      }
+    }
+
+    &--submit {
+      column-gap: 16px;
+      flex: 0 0 auto;
+      width: auto;
+      border: 1px solid #ccc9ce;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 51px;
+      border-radius: 10px;
+      background: var(--gradient-red);
+      cursor: pointer;
+      color: var(--color-white);
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-family: new-BebasNeue-Bold, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1em;
+      transition: all var(--button-anim-duration) ease-in-out;
+
+      @include media.tablet {
+        padding: 13px 48px;
+      }
+      @include media.mobile-m {
+        padding: 12px 28px;
+      }
+      @include media.mobile-s {
+        padding: 12px 10px;
+        font-size: 1.188rem;
+      }
+    }
+  }
 }

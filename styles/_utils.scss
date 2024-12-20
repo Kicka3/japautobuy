@@ -1,9 +1,14 @@
 @use 'media';
+@use 'variables';
 
 .container {
   display: flex;
   max-width: 1200px;
   margin-inline: auto;
+
+  @media (min-width: 1440px) {
+    width: var(--container-l);
+  }
 
   @include media.tablet {
     max-width: var(--container-lg);
@@ -17,7 +22,8 @@
     max-width: var(--container-xs);
   }
   @include media.mobile-s {
-    padding-bottom: 92px;
+    //padding-bottom: 92px;
+    padding-bottom: 0;
   }
 }
 
@@ -33,6 +39,8 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+
 
 .hidden-mobile-l {
   @include media.mobile-l {
@@ -52,17 +60,20 @@
   }
 }
 
-.hidden-tablet {
+
+
+.hidden-tablet-above {
   @include media.tablet-above {
     display: none !important;
   }
 }
-
 .hidden-tablet-below {
   @include media.tablet {
     display: none !important;
   }
 }
+
+
 
 .visible-mobile {
   @include media.mobile-above {

@@ -21,6 +21,10 @@
     align-items: flex-end;
     justify-content: space-around;
 
+    @include media.desktop-l{
+      column-gap: 28px;
+    }
+
     @include media.mobile-m{
       gap: 9px;
     }
@@ -44,7 +48,7 @@
     transition: background 0.3s ease;
 
     &:hover {
-      background: #444; /* Эффект наведения */
+      background: #444;
     }
   }
 

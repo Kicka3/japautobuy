@@ -32,18 +32,21 @@
   --padding-content: 32px;
   --padding-content-xl: 40px;
   --padding-section-right-left: 32px;
+  --container-width: calc(100% - 64px*2);
 
   --line-gray: 1px solid var(--color-gray);
 
   --container-width-max: 1200px;
   --container-padding: 48px;
+  --container-padding-l: 64px;
   --transition-duration: 0.2s;
 
   //Удалить
   --container-xs: calc(100% - 32px * 2);
+  //--container-xs: calc(100% - 64px * 2);
   --container-md: calc(var(--md) - var(--container-padding)* 2);
   --container-lg: calc(var(--lg) - var(--container-padding)* 2);
-  --container-xl: calc(var(--xl) - var(--container-padding)* 2);
+  --container-l: calc(var(--l) - var(--container-padding-l)* 2);
 
   --xs-android: 360px;
   --xs-iphone: 375px;
