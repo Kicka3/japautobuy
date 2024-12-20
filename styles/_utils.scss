@@ -22,9 +22,16 @@
     max-width: var(--container-xs);
   }
   @include media.mobile-s {
-    //padding-bottom: 92px;
     padding-bottom: 0;
   }
+}
+
+.modal-container {
+  max-width: var(--container-lg);
+  border-bottom: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 0;
 }
 
 .visually-hidden {
