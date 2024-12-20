@@ -1,16 +1,25 @@
+$desktop-above-l: 1441px;
+$desktop-l: 1440px;
+
 $desktop-above: 1281px;
 $desktop: 1280px;
 
-$tablet-above: 1024px;
+$tablet-above: 1023px;
 $tablet: 1024px;
 
-$mobile-above: 768px;
 $mobile: 768px;
 $mobile-below: 767px;
 
 $mobile-l: 425px;
 $mobile-m: 375px;
 $mobile-s: 320px;
+
+//desc
+@mixin desktop-l {
+  @media (max-width: $desktop-l) {
+    @content;
+  }
+}
 
 @mixin desktop-above {
   @media (min-width: $desktop-above) {
@@ -24,42 +33,41 @@ $mobile-s: 320px;
   }
 }
 
+//Tablet
 @mixin tablet-above {
-  @media (min-width: $tablet-above) {
+  @media (min-width: $tablet) {
     @content;
   }
 }
-
 @mixin tablet {
   @media (max-width: $tablet) {
     @content;
   }
 }
 
+//mobile
 @mixin mobile-above {
-  @media (min-width: $mobile-above) {
+  @media (min-width: $mobile) {
     @content;
   }
 }
-
 @mixin mobile {
   @media (max-width: $mobile) {
     @content;
   }
 }
-
 @mixin mobile-below {
   @media (max-width: $mobile-below) {
     @content;
   }
 }
-
 @mixin mobile-above-mode-max {
-  @media (max-width: $mobile-above) {
+  @media (max-width: $mobile) {
     @content;
   }
 }
 
+//Another mobile
 @mixin mobile-l {
   @media (max-width: $mobile-l) {
     @content;
@@ -83,6 +91,7 @@ $mobile-s: 320px;
   }
 }
 
+//Another utils
 @mixin hover {
   @media (hover: hover) {
     &:hover {

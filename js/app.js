@@ -40,6 +40,26 @@ closeModalButton.addEventListener('click', (event) => {
 });
 
 
+//Открытие модального окна для параметров в форме
+//Появление текста и Закрытие модального окна с задержкой для анимации
+const closeParamsModalButton = document.querySelector('.modal-filter__cross-button');
+const paramsDialog = document.getElementById('mobileOverlayParams');
+const paramsModalOverlay = document.querySelector('.modal-filter');
+
+closeParamsModalButton.addEventListener('click', (event) => {
+   event.preventDefault();
+
+   paramsModalOverlay.classList.remove('visible');
+   paramsModalOverlay.classList.add('close');
+
+   setTimeout(() => {
+      paramsDialog.close();
+      paramsModalOverlay.classList.remove('close');
+   }, 300);
+});
+
+
+
 
 //Блюр всей страницы при dropdown в хедере + Анимация для submenu
 /* Анимация работает только для классов header__menu-item--blur в сочетании с blur*/
