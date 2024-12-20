@@ -7,12 +7,10 @@
   margin: 0;
   padding: 0;
   border: none;
-  background: radial-gradient(105% 90% at 50% 100%, rgba(70, 0, 0, .9) 0, rgba(9, 0, 0, .95) 100%);
+  background: #f2f2f2;
   overflow-y: auto;
+  bottom: 0;
   z-index: 998;
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -28,36 +26,26 @@
     max-height: 100%;
   }
 
-  &__content {
-    animation: none;
-  }
-
   &__header {
     &-inner {
-      padding: 0 32px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       z-index: 1000;
     }
 
     &-body {
-      align-items: center;
-      border-bottom: 1px solid hsla(0, 0%, 100%, .15);
       display: flex;
       justify-content: space-between;
-      padding: 26px 0 22px;
-      width: 100%;
+      align-items: center;
+      border-bottom: 1px solid #d6d6d6;
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      padding-top: 42px;
     }
   }
 
   &__logo__image {
     width: 44px;
     height: 44px;
+    color: #ababab;
   }
 
   &__cross-button {
@@ -65,9 +53,9 @@
     @include mixin.square(48px);
     transition: all .3s ease-in-out;
     cursor: pointer;
-    height: 24px;
-    width: 24px;
-    color: white;
+    height: 32px;
+    width: 32px;
+    color: rgb(32, 14, 50);
 
     &:hover {
       transform: scale(1.2) translateZ(0);
@@ -77,9 +65,386 @@
       transform: scale(0.8) translateZ(0);
     }
   }
+
+  &__body-wrapper {
+    padding: 0 48px;
+
+    @include media.mobile-l {
+      padding: 0 30px
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    font-size: 1rem;
+  }
+
+  &__tabs {
+    &-content {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      z-index: 1;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      @include media.mobile {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      &__btn {
+        @include mixin.reset-button;
+        background-color: transparent;
+        padding: 12px 24px;
+        border: 1px solid #ccc9ce;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1.063rem;
+        font-weight: var(--font-weight-regular);
+        line-height: 1em;
+        color: var(--color-text);
+        font-family: new-BebasNeue-Regular, sans-serif;
+        text-transform: uppercase;
+
+        @include media.mobile-m {
+          padding: 10px 14px;
+        }
+        @include media.mobile-s {
+          padding: 8px 10px;
+          font-size: .9375rem;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+
+  &__content {
+    column-gap: 80px;
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 48px;
+    z-index: 1;
+
+    &__column {
+      align-self: flex-start;
+      display: flex;
+      flex-flow: row wrap;
+      row-gap: 8px;
+      width: 100%;
+      font-size: 1rem;
+      column-gap: 8px;
+
+      &--0 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &-title--first {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__select {
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../../../images/svg/arrow-down.svg") calc(100% - 16px) / 12px no-repeat #fff;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    color: #23242b;
+    cursor: pointer;
+    font-family: "roboto", sans-serif;
+    font-size: .8125rem;
+    height: 48px;
+    line-height: .9375rem;
+    padding-left: 16px;
+    transition: all .15s ease-in-out;
+    width: 100%;
+
+    &.modal-filter__select:hover,
+    &.modal-filter__select:focus {
+      background: url("../../../images/svg/arrow-down-red.svg") calc(100% - 16px) / 12px no-repeat #fff;
+      border: 1px solid var(--color-red);
+      color: var(--color-red);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+      outline: none;
+    }
+  }
+
+  &__input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 0.875rem;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    color: #23242b;
+    font-family: "roboto", sans-serif;
+    font-weight: 700;
+    height: 48px;
+    line-height: 0.9375rem;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    width: 100%;
+    position: relative;
+
+    // Убираем стрелки в Chrome, Safari и Edge
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    // Убираем стрелки в Firefox
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--color-focus, #000);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &:focus-visible {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: #666;
+      outline: none;
+    }
+
+    // Обновляем стили лейбла для focus и hover
+    &:hover + .modal-filter__input__label,
+    &:focus + .modal-filter__input__label,
+    &:focus-visible + .modal-filter__input__label {
+      color: var(--color-text);
+      top: 0;
+      background: transparent !important;
+    }
+
+    &:hover + .modal-lot-label,
+    &:focus + .modal-lot-label,
+    &:focus-visible + .modal-lot-label {
+      color: var(--color-text);
+      top: 125.3%;
+
+      @include media.mobile-l {
+        top: 131.5%;
+      }
+      @include media.mobile-m {
+        top: 130.5%;
+      }
+      @include media.mobile-m {
+        left: 11.7%;
+      }
+    }
+
+    & .-webkit-inner-spin-button {
+      display: none;
+    }
+
+    &__label {
+      color: #23242b;
+      font-family: "roboto", sans-serif;
+      font-size: 0.875rem;
+      left: 9px;
+      padding-left: 7px;
+      padding-right: 16px;
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      background: #fff;
+      pointer-events: none;
+      transform: translate3d(0, -50%, 0);
+      transition: all .15s ease-in-out;
+
+      &.modal-lot-label {
+        left: 5.3%;
+        top: 128%;
+        position: absolute;
+        font-size: 0.875rem;
+        color: #23242b;
+        transform: translate3d(0, -50%, 0);
+        transition: all .15s ease-in-out;
+        background: #fff;
+        padding: 0 8px;
+
+        &:hover,
+        &:focus {
+          color: var(--color-text);
+          top: 105.7%;
+        }
+
+        @include media.mobile {
+          left: 7.3%;
+        }
+        @include media.mobile-l {
+          left: 9.3%;
+          top: 134%;
+        }
+        @include media.mobile-m {
+          top: 133%;
+        }
+        @include media.mobile-s {
+          left: 10.3%;
+        }
+      }
+    }
+  }
+
+  //Экшены
+  &__actions-wrapper {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Занимает всю ширину экрана */
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -48px;
+    gap: 6px;
+  }
+
+  &__button {
+    &--reset {
+      @include mixin.reset-button;
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      padding: 12px 12px;
+      border: 1px solid #ccc9ce;
+      position: relative;
+      border-radius: 10px;
+
+      @include media.mobile-m {
+        padding: 8px 8px;
+
+        span {
+          display: none;
+        }
+      }
+
+      & span {
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1em;
+        position: relative;
+        text-transform: uppercase;
+        transition: all var(--button-anim-duration) ease-in-out;
+        z-index: 1;
+      }
+
+      @include media.hover {
+        border: 1px solid var(--color-red);
+        color: var(--color-red);
+      }
+    }
+
+    &--submit {
+      column-gap: 16px;
+      flex: 0 0 auto;
+      width: auto;
+      border: 1px solid #ccc9ce;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 51px;
+      border-radius: 10px;
+      background: var(--gradient-red);
+      cursor: pointer;
+      color: var(--color-white);
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-family: new-BebasNeue-Bold, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1em;
+      transition: all var(--button-anim-duration) ease-in-out;
+
+      @include media.tablet {
+        padding: 13px 48px;
+      }
+      @include media.mobile-m {
+        padding: 12px 28px;
+      }
+      @include media.mobile-s {
+        padding: 12px 10px;
+        font-size: 1.188rem;
+      }
+    }
+  }
 }
 
-/* Класс для закрытия */
+//Задаем всех инпутам и селектам динамическую ширину
+.modal-filter-input {
+  position: relative;
+  width: calc((100% - var(--filter-column-col-gap) * (var(--filter-input-count) - 1)) / var(--filter-input-count));
+}
+
+.modal-filter-select {
+  width: calc((100% - var(--filter-column-col-gap) * (var(--filter-input-count) - 1)) / var(--filter-input-count));
+}
+
+/* Переопределение стиля у 1 колонки */
+.modal-filter__content__column--0 .modal-filter-select {
+  width: 100%;
+}
+
+//Анимация закрытия
 .modal-filter.close {
   animation: hideDownTop 0.3s ease-in forwards;
+}
+
+.title {
+  font-size: 1.5625rem;
+  line-height: 1.2em;
+  display: flex;
+  flex-direction: column;
+  font-family: new-BebasNeue-Bold, sans-serif;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  color: black;
+}
+
+.subtitle {
+  color: #3d3d3d;
+  font-family: sans-serif;
+  font-size: .875rem;
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.3em;
+  font-weight: 300;
+}
+
+/* Класс для выделения */
+.modal-filter__tabs-content__btn--active {
+  border-color: red;
+  color: red;
+  font-weight: 700;
+  font-family: new-BebasNeue-Bold, sans-serif;
+  font-size: 1.063rem;
+  line-height: 1em;
+
+  @include media.mobile-s {
+    padding: 8px 10px;
+    font-size: .9375rem;
+    line-height: 1em;
+  }
 }

@@ -837,7 +837,9 @@
                 </div>
                 <div class="form-filter__tabs-content">
                     <button type="button" class="form-filter__tabs-content__btn">Авто из Японии</button>
-                    <button type="button" class="form-filter__tabs-content__btn form-filter__tabs-content__btn--active">Авто из Китая</button>
+                    <button type="button" class="form-filter__tabs-content__btn form-filter__tabs-content__btn--active">
+                        Авто из Китая
+                    </button>
                     <button type="button" class="form-filter__tabs-content__btn">Авто из Кореи</button>
                     <button type="button" class="form-filter__tabs-content__btn">Европейские авто</button>
                 </div>
@@ -985,8 +987,10 @@
 
             <!-- Кнопки -->
             <div class="form-filter__buttons-action">
-                <button type="reset" class="form-filter__button form-filter__button--params hidden-tablet-above" onClick="mobileOverlayParams.showModal()">
-                    <svg class="icon-filter fixed-item-icon-search" xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 28 28" aria-labelledby="Filter" >
+                <button type="reset" class="form-filter__button form-filter__button--params hidden-tablet-above"
+                        onClick="mobileOverlayParams.showModal()">
+                    <svg class="icon-filter fixed-item-icon-search" xmlns="http://www.w3.org/2000/svg"
+                         role="presentation" viewBox="0 0 28 28" aria-labelledby="Filter">
                         <g fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M20.592 22.9206C20.592 22.2888 20.7018 21.7766 20.8372 21.7766L27.2109 21.7766C27.3463 21.7766 27.456 22.2888 27.456 22.9206C27.456 23.5524 27.3463 24.0646 27.2109 24.0646L20.8372 24.0646C20.7018 24.0646 20.592 23.5524 20.592 22.9206Z"
@@ -1010,7 +1014,8 @@
                                   fill="white"
                             ></path>
                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M12.2719 6.99201C12.2719 5.49863 11.0613 4.28801 9.56792 4.28801C8.07455 4.28801 6.86393 5.49863 6.86393 6.99201C6.86393 8.48539 8.07455 9.69601 9.56792 9.69601C11.0613 9.69601 12.2719 8.48539 12.2719 6.99201ZM14.5599 6.99201C14.5599 4.23501 12.3249 2.00001 9.56792 2.00001C6.81092 2.00001 4.57593 4.23501 4.57593 6.99201C4.57593 9.74901 6.81092 11.984 9.56792 11.984C12.3249 11.984 14.5599 9.74901 14.5599 6.99201Z"                          fill="white"
+                                  d="M12.2719 6.99201C12.2719 5.49863 11.0613 4.28801 9.56792 4.28801C8.07455 4.28801 6.86393 5.49863 6.86393 6.99201C6.86393 8.48539 8.07455 9.69601 9.56792 9.69601C11.0613 9.69601 12.2719 8.48539 12.2719 6.99201ZM14.5599 6.99201C14.5599 4.23501 12.3249 2.00001 9.56792 2.00001C6.81092 2.00001 4.57593 4.23501 4.57593 6.99201C4.57593 9.74901 6.81092 11.984 9.56792 11.984C12.3249 11.984 14.5599 9.74901 14.5599 6.99201Z"
+                                  fill="white"
                             ></path>
                         </g>
                     </svg>
@@ -1029,9 +1034,6 @@
         </form>
     </div>
 </main>
-
-
-
 
 
 <!--Зафиксированный хедер при скролле-->
@@ -1625,16 +1627,21 @@
 </nav>
 
 <!--Модалка для кнопки параметры-->
-<dialog class="modal-filter" id="mobileOverlayParams" >
+<dialog class="modal-filter" id="mobileOverlayParams">
+    <!--    Header модалки-->
     <div class="modal-filter__header-inner">
-        <div class="modal-filter__header-body">
-            <img src="images/svg/logo.svg"
-                 class="modal-filter__logo__image"
-                 alt="img logo"
-                 width="100px"
-                 height="50px"
-                 loading="lazy"
-            >
+        <div class="modal-filter__header-body container">
+            <svg class="modal-filter__logo__image" xmlns="http://www.w3.org/2000/svg" role="presentation"
+                 viewBox="0 0 97 60" aria-labelledby="Logotype">
+                <g fill="none">
+                    <path d="M48.2337 60V48.8865H35.4147V37.773H48.1817V13.0475C43.9174 16.9515 39.705 20.8035 35.3887 24.7596V24.1597C35.3887 19.7616 35.3887 15.3895 35.4147 10.9913C35.4147 10.7311 35.5447 10.3927 35.7267 10.2365C39.159 6.93113 42.6173 3.62571 46.0755 0.346317C46.2576 0.164129 46.5696 0.0339943 46.8036 0.0339943C51.1719 0.00796743 55.5403 0.00796743 59.9086 0.0339943C60.0646 0.0339943 60.2206 0.0600212 60.4026 0.0600212V48.8605H77.902C82.6864 48.8605 85.9886 43.9935 84.1945 39.5428C83.1544 36.9141 80.6842 35.2484 77.85 35.2484H64.719C64.719 35.0402 64.693 34.858 64.693 34.6758V25.3061C64.693 24.8376 64.823 24.7335 65.291 24.7335C68.8273 24.7596 72.3896 24.7335 75.9258 24.7335C79.9041 24.7335 83.1804 21.1158 82.8424 17.1597C82.4783 13.594 80.0862 11.0694 76.5499 10.5489C76.3159 10.5228 76.1078 10.5228 75.8738 10.5228H64.667V0.58056C64.667 0.138102 64.797 0.0339943 65.239 0.0339943C68.8013 0.0600213 72.3636 0.0339943 75.9258 0.0339943C77.3039 0.0339943 78.682 -0.0701133 80.0341 0.0860482C85.3126 0.684667 89.2909 3.39147 91.735 8.07631C95.5313 15.3378 93.0091 24.0048 86.0146 28.2732C85.9106 28.3513 85.8066 28.4294 85.7286 28.4554C86.9247 29.054 88.1988 29.5485 89.3169 30.2773C93.7112 33.0882 96.2334 37.1223 96.7534 42.3017C97.4555 49.2249 93.9452 55.4193 87.7567 58.4644C86.1706 59.2452 84.4805 59.7137 82.7384 59.8959C82.5563 59.9219 82.4003 59.974 82.2183 60H48.2337Z"
+                          fill="currentColor"></path>
+                    <path d="M0 51.3591C3.43226 51.3591 6.83853 51.3591 10.2708 51.333C12.897 51.307 15.4972 51.307 18.1234 51.2289C18.7214 51.2289 19.2935 51.0728 19.8915 50.9426C21.1916 50.6303 22.0237 49.7975 22.2057 48.5221C22.4137 47.1427 22.5697 45.7373 22.5697 44.3318C22.5957 32.4115 22.5957 20.4911 22.5957 8.57082C22.5957 8.41466 22.5957 8.2585 22.5957 8.05028C17.3173 8.05028 12.0909 8.05028 6.81252 8.05028C6.81252 5.5517 6.81252 3.10517 6.81252 0.632614C15.3152 0.632614 23.8178 0.632614 32.3725 0.632614C32.3725 0.840829 32.3725 1.04904 32.3725 1.23123C32.3725 16.5611 32.3725 31.8649 32.3725 47.1948C32.3725 50.344 31.5144 53.181 29.3043 55.5234C27.3541 57.5535 24.8839 58.6726 22.1537 59.1151C21.0096 59.2973 19.8135 59.3493 18.6434 59.3493C12.455 59.3754 6.26648 59.3493 0.052004 59.3493C0 56.6946 0 54.0398 0 51.3591Z"
+                          fill="currentColor"></path>
+                    <path d="M17.6814 28.4813C17.6814 28.7936 17.6814 28.9498 17.6814 29.0799C17.6814 33.036 17.6814 37.0181 17.6554 40.9742C17.6554 41.2605 17.5253 41.5988 17.3173 41.781C15.9132 43.2385 14.5091 44.67 13.079 46.0755C12.923 46.2316 12.663 46.3878 12.455 46.3878C8.42465 46.4138 4.39434 46.4138 0.364028 46.3878C0.286022 46.3878 0.208016 46.3878 0 46.3618C5.92846 40.4016 11.7529 34.4935 17.6814 28.4813Z"
+                          fill="currentColor"></path>
+                </g>
+            </svg>
             <div class="modal-filter__close-button-wrapper" method="dialog">
                 <button class="modal-filter__close-button modal-filter__cross-button" type="submit">
                     <span class="visually-hidden">Close navigation menu</span>
@@ -1651,31 +1658,36 @@
                 </button>
             </div>
         </div>
+    </div>
 
-        <form class="form-filter" action="#" method="GET">
+    <div class="modal-filter__body-wrapper">
+        <form class="modal-filter__form" action="#" method="GET">
             <!-- Табы -->
-            <div class="form-filter__tabs-wrapper">
-                <div class="form-filter__tabs-title hidden-tablet-above">
-                    <p class="form-filter__tabs-title__text">Введите данные
-                        <span class="form-filter__tabs-title__subtitle">Автомобиля</span>
-                    </p>
-                </div>
-                <div class="form-filter__tabs-content">
-                    <button type="button" class="form-filter__tabs-content__btn">Авто из Японии</button>
-                    <button type="button" class="form-filter__tabs-content__btn form-filter__tabs-content__btn--active">Авто из Китая</button>
-                    <button type="button" class="form-filter__tabs-content__btn">Авто из Кореи</button>
-                    <button type="button" class="form-filter__tabs-content__btn">Европейские авто</button>
+            <div class="modal-filter__tabs-wrapper">
+                <div class="modal-filter__tabs-content">
+                    <button type="button" class="modal-filter__tabs-content__btn">Авто из Японии</button>
+                    <button type="button"
+                            class="modal-filter__tabs-content__btn modal-filter__tabs-content__btn--active">Авто из
+                        Китая
+                    </button>
+                    <button type="button" class="modal-filter__tabs-content__btn">Авто из Кореи</button>
+                    <button type="button" class="modal-filter__tabs-content__btn">Европейские авто</button>
                 </div>
             </div>
 
             <!-- Форма-->
-            <fieldset class="form-filter__fieldset">
-                <legend class="form-filter__legend visually-hidden">Фильтры</legend>
-                <div class="form-filter__content">
+            <fieldset class="modal-filter__fieldset">
+                <legend class="modal-filter__legend visually-hidden">Фильтры</legend>
+                <div>
+                    <p class="modal-filter__content__column-title--first title">Выберите модель
+                        <span class="modal-filter__content__column-subtitle subtitle">Какую модель автомобиля вы ищите?</span>
+                    </p>
+                </div>
+                <div class="modal-filter__content">
                     <!-- 1 колонка -->
-                    <div class="form-filter__content__column form-filter__content__column--0">
-                        <div class="form-filter-select">
-                            <select class="form-filter__select" id="marka_name-modal-filter" name="brand">
+                    <div class="modal-filter__content__column modal-filter__content__column--0">
+                        <div class="modal-filter-select">
+                            <select class="modal-filter__select" id="marka_name-modal-filter" name="brand">
                                 <option value="">Выберите марку</option>
                                 <option value="toyota">Toyota</option>
                                 <option value="bmw">BMW</option>
@@ -1690,9 +1702,9 @@
                             </select>
                         </div>
 
-                        <div class="form-filter-select">
+                        <div class="modal-filter-select">
                             <!--                            Сделать множественный выбор   multiple-->
-                            <select class="form-filter__select" id="model_name-modal-filter" name="model">
+                            <select class="modal-filter__select" id="model_name-modal-filter" name="model">
                                 <option value="">Выберите модель</option>
                                 <option value="camry">Toyota Camry</option>
                                 <option value="rav4">Toyota RAV4</option>
@@ -1702,8 +1714,8 @@
                             </select>
                         </div>
 
-                        <div class="form-filter-select">
-                            <select class="form-filter__select form-filter__select--body" id="kuzov-modal-filter"
+                        <div class="modal-filter-select">
+                            <select class="modal-filter__select modal-filter__select--body" id="kuzov-modal-filter"
                                     name="body_type">
                                 <option value="">Выберите кузов</option>
                                 <option value="sedan">Седан</option>
@@ -1714,22 +1726,15 @@
                         </div>
                     </div>
 
+                    <div>
+                        <p class="modal-filter__content__column-title title">Характеристики автомобиля
+                            <span class="modal-filter__content__column-subtitle subtitle">Подробный характеристики</span>
+                        </p>
+                    </div>
                     <!-- 2 колонка -->
-                    <div class="form-filter__content__column form-filter__content__column--1 hidden-tablet-below">
-                        <div class="form-filter-select form-filter-select--shown">
-                            <select class="form-filter__select" id="year_min-modal-filter" name="volume_from">
-                                <option value="">Год от</option>
-                                <option value="sedan">2014</option>
-                                <option value="suv">22222</option>
-                                <option value="coupe">2013</option>
-                                <option value="hatchback">2021</option>
-                            </select>
-                            <!--                            <span class="form-filter__label-text">Год от</span>-->
-                        </div>
-
-                        <div class="form-filter-select form-filter-select--shown">
-                            <!--                            <span class="form-filter__label-text">Год до</span>-->
-                            <select class="form-filter__select" id="year_max-modal-filter" name="volume_to">
+                    <div class="modal-filter__content__column modal-filter__content__column--1">
+                        <div class="modal-filter-select modal-filter-select--shown">
+                            <select class="modal-filter__select" id="year_min-modal-filter" name="volume_from">
                                 <option value="">Год от</option>
                                 <option value="sedan">2014</option>
                                 <option value="suv">22222</option>
@@ -1738,45 +1743,53 @@
                             </select>
                         </div>
 
-                        <div class="form-filter-input form-filter-input--shown">
-                            <input class="form-filter__input form-filter__input--shown" type="number"
+                        <div class="modal-filter-select modal-filter-select--shown">
+                            <select class="modal-filter__select" id="year_max-modal-filter" name="volume_to">
+                                <option value="">Год от</option>
+                                <option value="sedan">2014</option>
+                                <option value="suv">22222</option>
+                                <option value="coupe">2013</option>
+                                <option value="hatchback">2021</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-filter-input modal-filter-input--shown">
+                            <input class="modal-filter__input modal-filter__input--shown" type="number"
                                    name="volume_from"/>
-                            <label class="form-filter__input__label" id="eng_v_min-modal-filter">Объем от</label>
+                            <label class="modal-filter__input__label" id="eng_v_min-modal-filter">Объем от</label>
                         </div>
 
-                        <div class="form-filter-input form-filter-input--shown">
-                            <input class="form-filter__input" id="eng_v_max-modal-filter" type="number"
+                        <div class="modal-filter-input modal-filter-input--shown">
+                            <input class="modal-filter__input" id="eng_v_max-modal-filter" type="number"
                                    name="volume_to"/>
-                            <label class="form-filter__input__label" for="eng_v_max-filter-main">Объем до</label>
+                            <label class="modal-filter__input__label" for="eng_v_max-modal-filter">Объем до</label>
                         </div>
 
-                        <div class="form-filter-input form-filter-input--shown">
-                            <input class="form-filter__input" id="mileage_min-modal-filter" type="number"
+                        <div class="modal-filter-input modal-filter-input--shown">
+                            <input class="modal-filter__input" id="mileage_min-modal-filter" type="number"
                                    name="mileage_from"/>
-                            <label class="form-filter__input__label" for="mileage_min-filter-main">Пробег от</label>
+                            <label class="modal-filter__input__label" for="mileage_min-modal-filter">Пробег от</label>
                         </div>
 
-                        <div class="form-filter-input form-filter-input--shown">
-                            <input class="form-filter__input" id="mileage_max-modal-filter" type="number"
+                        <div class="modal-filter-input modal-filter-input--shown">
+                            <input class="modal-filter__input" id="mileage_max-modal-filter" type="number"
                                    name="mileage_to"/>
-                            <label class="form-filter__input__label" for="mileage_max-filter-main">Пробег от</label>
+                            <label class="modal-filter__input__label" for="mileage_max-modal-filter">Пробег от</label>
                         </div>
                     </div>
 
                     <!-- 3 колонка -->
-                    <div class="form-filter__content__column form-filter__content__column--2 hidden-tablet-below">
-                        <div class="form-filter-select">
-                            <!--                            <span class="form-filter__label-text">КПП</span>-->
-                            <select class="form-filter__select" id="kpp_type-modal-filter" name="transmission">
+                    <div class="modal-filter__content__column modal-filter__content__column--2">
+                        <div class="modal-filter-select">
+                            <select class="modal-filter__select" id="kpp_type-modal-filter" name="transmission">
                                 <option value="">КПП</option>
                                 <option value="at">АТ</option>
                                 <option value="mt">МТ</option>
                             </select>
                         </div>
 
-                        <div class="form-filter-select">
-                            <!--                            <span class="form-filter__label-text">Привод</span>-->
-                            <select class="form-filter__select" id="priv_incl_like-modal-filtern" name="drive">
+                        <div class="modal-filter-select">
+                            <select class="modal-filter__select" id="priv_incl_like-modal-filter" name="drive">
                                 <option value="">Привод</option>
                                 <option value="fr">FR</option>
                                 <option value="ff">FF</option>
@@ -1784,64 +1797,31 @@
                             </select>
                         </div>
 
-                        <div class="form-filter__row">
-                            <div class="form-filter-select">
-                                <!--                                <span class="form-filter__label-text">Цвет</span>-->
-                                <select class="form-filter__select form-filter__select--color" id="color-modal-filter"
-                                        name="color">
-                                    <option value="">Цвет</option>
-                                    <option value="white" class="form-filter__color-option">Белый</option>
-                                    <option value="black" class="form-filter__color-option">Черный</option>
-                                    <option value="red" class="form-filter__color-option">Красный</option>
-                                    <option value="blue" class="form-filter__color-option">Синий</option>
-                                    <option value="green" class="form-filter__color-option">Зеленый</option>
-                                </select>
-                            </div>
+                        <div class="modal-filter-select">
+                            <select class="modal-filter__select modal-filter__select--color" id="color-modal-filter"
+                                    name="color">
+                                <option value="">Цвет</option>
+                                <option value="white">Белый</option>
+                                <option value="black">Черный</option>
+                                <option value="red">Красный</option>
+                                <option value="blue">Синий</option>
+                                <option value="green">Зеленый</option>
+                            </select>
                         </div>
                     </div>
-                    <!--                           <span class="form-filter__label-text">Лот</span>-->
                     <!-- 4 колонка -->
-                    <div class="form-filter__content__column form-filter__content__column--3 hidden-tablet-below">
-                        <input class="form-filter__input" type="text" id="lot-modal-filter" name="lot"/>
-                        <label class="form-filter__input__label lot-label" for="lot-filter-main">Лот</label>
+                    <div class="modal-filter__content__column modal-filter__content__column--3">
+                        <p class="modal-filter__content__column-title title">Аукцион
+                            <span class="modal-filter__content__column-subtitle subtitle">Данные аукционов</span>
+                        </p>
+                        <input class="modal-filter__input" type="text" id="lot-modal-filter" name="lot"/>
+                        <label class="modal-filter__input__label modal-lot-label" for="lot-modal-filter">Лот</label>
                     </div>
                 </div>
             </fieldset>
-
             <!-- Кнопки -->
-            <div class="form-filter__buttons-action">
-                <button type="reset" class="form-filter__button form-filter__button--params hidden-tablet-above" onClick="mobileOverlayParams.showModal()">
-                    <svg class="icon-filter fixed-item-icon-search" xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 28 28" aria-labelledby="Filter" >
-                        <g fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M20.592 22.9206C20.592 22.2888 20.7018 21.7766 20.8372 21.7766L27.2109 21.7766C27.3463 21.7766 27.456 22.2888 27.456 22.9206C27.456 23.5524 27.3463 24.0646 27.2109 24.0646L20.8372 24.0646C20.7018 24.0646 20.592 23.5524 20.592 22.9206Z"
-                                  fill="#806D6E"
-                            ></path>
-                            <path fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M5.00058e-08 22.9206C2.23884e-08 22.2888 0.219508 21.7766 0.490285 21.7766L13.2377 21.7766C13.5085 21.7766 13.728 22.2888 13.728 22.9206C13.728 23.5524 13.5085 24.0646 13.2377 24.0646L0.490286 24.0646C0.219508 24.0646 7.76233e-08 23.5524 5.00058e-08 22.9206Z"
-                                  fill="#806D6E"
-                            ></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M20.176 23.008C20.176 21.5146 18.9654 20.304 17.472 20.304C15.9786 20.304 14.768 21.5146 14.768 23.008C14.768 24.5014 15.9786 25.712 17.472 25.712C18.9654 25.712 20.176 24.5014 20.176 23.008ZM22.464 23.008C22.464 20.251 20.229 18.016 17.472 18.016C14.715 18.016 12.48 20.251 12.48 23.008C12.48 25.765 14.715 28 17.472 28C20.229 28 22.464 25.765 22.464 23.008Z"
-                                  fill="white"
-                            ></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M13.728 6.90462C13.728 6.27281 13.9475 5.76062 14.2183 5.76062L26.9657 5.76062C27.2365 5.76062 27.456 6.27281 27.456 6.90462C27.456 7.53643 27.2365 8.04862 26.9657 8.04862L14.2183 8.04862C13.9475 8.04862 13.728 7.53643 13.728 6.90462Z"
-                                  fill="#806D6E"
-                            ></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M5.00058e-08 6.90462C2.23883e-08 6.27281 0.109754 5.76062 0.245143 5.76062L6.61885 5.76062C6.75424 5.76062 6.864 6.27281 6.864 6.90462C6.864 7.53643 6.75424 8.04862 6.61885 8.04862L0.245143 8.04862C0.109754 8.04862 7.76232e-08 7.53643 5.00058e-08 6.90462Z"
-                                  fill="white"
-                            ></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M12.2719 6.99201C12.2719 5.49863 11.0613 4.28801 9.56792 4.28801C8.07455 4.28801 6.86393 5.49863 6.86393 6.99201C6.86393 8.48539 8.07455 9.69601 9.56792 9.69601C11.0613 9.69601 12.2719 8.48539 12.2719 6.99201ZM14.5599 6.99201C14.5599 4.23501 12.3249 2.00001 9.56792 2.00001C6.81092 2.00001 4.57593 4.23501 4.57593 6.99201C4.57593 9.74901 6.81092 11.984 9.56792 11.984C12.3249 11.984 14.5599 9.74901 14.5599 6.99201Z"                          fill="white"
-                            ></path>
-                        </g>
-                    </svg>
-                    <span>Параметры</span>
-                </button>
-                <button type="reset" class="form-filter__button form-filter__button--reset">
+            <div class="modal-filter__actions-wrapper">
+                <button type="reset" class="modal-filter__button modal-filter__button--reset">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.2971 12.4518L19.2998 12.4318V12.3444C19.2998 11.9892 19.0118 11.7012 18.6566 11.7012H18.5378C18.2338 11.7012 18.0686 11.9444 18.0431 12.1618C18.0348 12.2318 18.031 12.2601 18.0287 12.2768L18.0274 12.2862C18.0242 12.3105 18.0233 12.3271 18.0218 12.3531L18.0209 12.3681C17.999 12.743 17.9415 13.1135 17.8495 13.4797C17.0248 16.7589 13.631 18.7254 10.3745 17.8112C7.20953 16.9224 5.3253 13.6378 6.16347 10.4783C6.8961 7.71756 9.41299 5.85733 12.2638 5.97627C13.6797 6.03559 14.9263 6.52316 15.9695 7.47156C16.3663 7.83222 16.7305 8.21789 17.1036 8.61308L17.1859 8.70021H16.008C15.6575 8.70021 15.3735 8.9843 15.3735 9.33473C15.3735 9.68609 15.6592 9.96926 16.0088 9.96926L16.6346 9.96922C17.2172 9.96916 17.7549 9.9691 18.3845 9.96957C18.8848 9.97033 19.2995 9.56971 19.2995 9.06191V6.66919C19.2995 6.32167 19.0178 6.03996 18.6702 6.03996C18.3227 6.03996 18.041 6.32167 18.041 6.66919V7.76655C17.7119 7.41881 17.0361 6.75272 16.7394 6.46314C15.6397 5.48121 14.3314 4.9298 12.8765 4.75457C12.7882 4.74392 12.7015 4.73235 12.6127 4.72051L12.4767 4.70251L12.4574 4.7H11.5648L11.5395 4.70434C11.5169 4.70823 11.4979 4.71168 11.4806 4.71483C11.4522 4.71999 11.4284 4.72432 11.4007 4.72839C11.3175 4.74035 11.2284 4.7514 11.1362 4.76284C10.9272 4.78877 10.7016 4.81676 10.49 4.86208C8.86328 5.21113 7.49169 6.02012 6.4269 7.30226C4.92686 9.10838 4.40161 11.1964 4.86129 13.4964C5.18959 15.1383 6.02447 16.5059 7.30238 17.5781C8.87337 18.896 10.7038 19.4562 12.7398 19.2627C14.1867 19.1253 15.4839 18.5811 16.6054 17.6569C17.9971 16.51 18.8669 15.0406 19.1862 13.2596C19.2197 13.0724 19.2438 12.8774 19.2665 12.6924C19.2767 12.6096 19.2867 12.5289 19.2971 12.4518Z"
@@ -1849,7 +1829,7 @@
                     </svg>
                     <span>Сбросить</span>
                 </button>
-                <a type="submit" class="form-filter__button form-filter__button--submit">Показать автомобили</a>
+                <a type="submit" class="modal-filter__button modal-filter__button--submit">Показать автомобили</a>
             </div>
         </form>
     </div>
@@ -2100,7 +2080,6 @@
                 </li>
             </ul>
         </nav>
-
         <nav class="mobile-menu visible-mobile">
             <ul class="mobile__menu-list">
                 <li class="mobile__menu-item" onClick="mobileOverlay.showModal()">

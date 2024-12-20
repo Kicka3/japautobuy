@@ -41,12 +41,14 @@
   --container-padding-l: 64px;
   --transition-duration: 0.2s;
 
-  //Удалить
   --container-xs: calc(100% - 32px * 2);
-  //--container-xs: calc(100% - 64px * 2);
   --container-md: calc(var(--md) - var(--container-padding)* 2);
   --container-lg: calc(var(--lg) - var(--container-padding)* 2);
   --container-l: calc(var(--l) - var(--container-padding-l)* 2);
+
+  //Удалить
+  --filter-column-col-gap: 8px; /* Пример значения */
+  --filter-input-count: 2; /* Количество колонок в строке */
 
   --xs-android: 360px;
   --xs-iphone: 375px;

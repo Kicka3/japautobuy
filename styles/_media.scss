@@ -1,3 +1,5 @@
+$desktop-above-4k: 2560px;
+
 $desktop-above-l: 1441px;
 $desktop-l: 1440px;
 
@@ -15,6 +17,12 @@ $mobile-m: 375px;
 $mobile-s: 320px;
 
 //desc
+@mixin desktop-4k {
+  @media (max-width: $desktop-above-4k) {
+    @content;
+  }
+}
+
 @mixin desktop-l {
   @media (max-width: $desktop-l) {
     @content;
